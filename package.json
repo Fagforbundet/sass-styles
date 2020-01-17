@@ -1,0 +1,8 @@
+{
+  "name": "@fagforbundet/ff-sass",
+  "version": "0.0.1",
+  "description": "",
+  "files": [
+    "*.scss"
+  ]
+}

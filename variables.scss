@@ -1,0 +1,92 @@
+// S3 bucket
+$bucket: "https://s3.eu-north-1.amazonaws.com/fagforbundet-static/id/";
+
+// Colors, common name: http://chir.ag/projects/name-that-color/#fa3e34
+$clr-mine-shaft:    #2f2f2f;
+$clr-tuatara:       #3c3c3b;
+$clr-tundora:       #4a4a4a;
+$clr-boulder:       #777777;
+$clr-gray:          #828282;
+$clr-dusty-gray:    #999999;
+$clr-chalice:       #aaaaaa;
+$clr-dawn:          #a29f9c;
+$clr-nickel:        #bcbcbb;
+$clr-silver:        #c1c1c1;
+$clr-westar:        #dcdad3;
+$clr-carrara2:      #e7e5df;
+$clr-carrara:       #e9e7e1;
+$clr-pampas:        #eeeae5;
+$clr-desert-storm:  #f4f1ed;
+$clr-linen:         #faf8f4;
+$clr-seashell:      #f1f1f1;
+$clr-alabaster:     #fafafa;
+
+$clr-border:        $clr-carrara;
+$clr-ff-link:       $clr-tuatara;
+$clr-ff-link-hover: $clr-boulder;
+$clr-ff-green:      #16b971;
+$clr-ff-red:        #fa3e34;
+$clr-ff-red-hover:  #d32b1f;
+$clr-ff-red-dark:   #bf271c;
+$clr-ff-sand:       #faf8f5;
+$clr-ff-teal:       #24acc8;
+$clr-ff-teal-shade: #007388;
+$clr-ff-text:       $clr-mine-shaft;
+$clr-ff-yellow:     #ffce00;
+$clr-white:         #ffffff;
+
+// Palette from Tight
+// https://www.figma.com/file/Y3ZUjmKHOoVVIQDCEqg3JuWL/FF-Design-doc?node-id=34%3A521
+$clr-border-150:    #c8c6bd;
+$clr-border-120:    #dcdad3;
+$clr-border-100:    $clr-carrara2;
+$clr-border-70:     #eee;
+$clr-red:           $clr-ff-red;
+$clr-red-150:       #970705;
+$clr-red-120:       #d32b1f;
+$clr-red-100:       $clr-ff-red;
+$clr-red-70:        #FC7871;
+$clr-red-50:        #FC9E99;
+$clr-red-20:        #FED8D6;
+$clr-sand:          $clr-pampas;
+$clr-sand-100:      $clr-pampas;
+$clr-sand-70:       #f3f0ed;
+$clr-sand-60:       #f6f4f0;
+$clr-sand-50:       #faf8f4;
+$clr-text:          $clr-tuatara;
+$clr-text-70:       #6d6d6d;
+$clr-text-60:       #828282;
+$clr-text-50:       #979797;
+$clr-text-30:       #c1c1c1;
+
+// Inputs, forms
+$default-border-radius:   6px;
+$default-vertical-gutter: 22px;
+$button-border-radius:    5px;
+
+// Containers and breakpoints
+$breakpoint-pad-min-width:           500px;
+$breakpoint-pad-max-width:           767px;
+$breakpoint-pc-min-width:            768px;
+$breakpoint-pc-min-width-decoration: 900px;
+$breakpoint-wide-min-width:          1100px;
+$container-max-width:                930px;
+$container-content-max-width:        560px;
+$container-content-narrow-max-width: 435px;
+$container-padding-horizontal-mob:   20px;
+$container-padding-horizontal-pad:   25px;
+$container-padding-horizontal-pc:    50px;
+$container-padding-horizontal-wide:  150px;
+$container-padding-vertical-mob:     10px;
+$container-padding-vertical-pad:     20px;
+$container-padding-vertical-pc:      30px;
+$content-title-spacing-mob:          36px;
+$content-title-spacing-pad:          40px;
+$content-title-spacing-pc:           44px;
+
+// Site setup
+$header-max-height-mob:       103px;
+$header-max-height-pad:       103px;
+$footer-max-height:           60px;
+$site-padding-horizontal-mob: 22px;
+$site-padding-horizontal-pc:  30px;
