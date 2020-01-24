@@ -1,8 +1,16 @@
 {
   "name": "@fagforbundet/ff-sass",
-  "version": "0.0.1",
   "description": "",
+  "version": "0.0.1",
+  "scripts": {
+    "storybook": "start-storybook"
+  },
   "files": [
     "*.scss"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@storybook/html": "^5.3.8",
+    "babel-loader": "^8.0.6"
+  }
 }
