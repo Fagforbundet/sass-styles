@@ -6,7 +6,8 @@
     "storybook": "start-storybook"
   },
   "files": [
-    "styles/*"
+    "styles/**/*",
+    "fonts/**/*"
   ],
   "devDependencies": {
     "@babel/core": "^7.8.3",
