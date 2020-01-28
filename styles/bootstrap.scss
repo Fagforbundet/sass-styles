@@ -1,0 +1,15 @@
+@import "reset";
+@import "fonts";
+@import "colors";
+
+body {
+  font-family: "Source Sans Pro", "system-ui", -apple-system, sans-serif;
+  background-color: $background-color;
+}
+
+// Site setup
+$header-max-height-mob:       103px;
+$header-max-height-pad:       103px;
+$footer-max-height:           60px;
+$site-padding-horizontal-mob: 22px;
+$site-padding-horizontal-pc:  30px;
