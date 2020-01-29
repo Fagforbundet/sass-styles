@@ -1,3 +1,10 @@
+/**
+ * BOOTSTRAP
+ *
+ * This file should work as a bootstrap of the sass framework.
+ * It should reset css, and set som basic global rules.
+ */
+
 @import "reset";
 @import "fonts";
 @import "colors";
@@ -8,6 +15,7 @@ body {
 }
 
 // Site setup
+// TODO: Move / remove?
 $header-max-height-mob:       103px;
 $header-max-height-pad:       103px;
 $footer-max-height:           60px;
