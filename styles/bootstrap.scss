@@ -7,10 +7,12 @@
 
 @import "reset";
 @import "fonts";
+
+@import "typography";
 @import "colors";
 
 body {
-  font-family: "Source Sans Pro", "system-ui", -apple-system, sans-serif;
+  font-family: $font-stack;
   background-color: $background-color;
 }
 
