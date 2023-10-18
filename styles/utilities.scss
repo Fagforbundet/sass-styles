@@ -1,0 +1,549 @@
+@use "variables" as var;
+@use "typography" as typ;
+
+.a-center {
+  text-align: center;
+}
+
+.a-right {
+  text-align: right;
+}
+
+/**
+ * For <cdk-accordion>
+ * @see https://v12.material.angular.io/cdk/accordion/examples
+ */
+.accordion {
+  .accordion__item {
+    > header {
+      cursor: pointer;
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 1rem;
+      justify-content: space-between;
+
+      > .content {
+        align-items: center;
+        display: flex;
+        flex: 1 1 80%;
+        flex-flow: row wrap;
+        gap: 1rem;
+        justify-content: space-between;
+
+        > .name {
+          flex: 1 1 40%;
+          min-width: 0; // Break overflowing words if flow: row
+        }
+
+        > .summary {
+          align-items: center;
+          display: flex;
+          flex: 1 1 375px;
+          flex-flow: row nowrap;
+          gap: 1rem;
+
+          &.a-right {
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      > .toggle {
+        align-self: center;
+        flex: 0 0 30px;
+        margin-left: auto;
+      }
+    }
+
+    > .accordion__body {
+      display: block;
+      padding: 0 0 1rem 2rem;
+    }
+  }
+}
+
+.box {
+  border:         1px solid var.$clr-border;
+  display:        flex;
+  flex-direction: column;
+
+  > a:first-of-type {
+    @include typ.font-semibold;
+    color: var.$clr-text;
+  }
+
+  &.box--login {
+    background:    var.$clr-white;
+    border-radius: 12px;
+    box-shadow:    0 4px 14px 0 rgba(0, 0, 0, 0.08);
+    padding:       40px;
+    max-width:     500px;
+
+    .logo {
+      margin:    0 auto 1em;
+      max-width: 200px;
+    }
+
+    .intro {
+      margin: 0 0 1em;
+    }
+  }
+
+  &.box--padded {
+    padding: 1rem;
+  }
+
+  &.box--rounded {
+    border-radius: var.$border-radius-box;
+  }
+
+  &.box--shadowed {
+    background: var.$clr-sand-150;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.04);
+  }
+
+  &.box--gray {
+    background: var.$clr-gray-120;
+  }
+
+  &.box--sand {
+    background: var.$clr-sand-150;
+  }
+
+  &.box--white {
+    background: var.$clr-white;
+  }
+}
+
+/**
+ * Entity boxes shows an entity/item and it's key data, with optional actions menu on the side
+ */
+.entity-box {
+  border: 1px solid var.$clr-border;
+  border-radius: var.$border-radius-default;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: .75rem .75rem .75rem 1rem;
+  margin: .75rem 0;
+
+  &.highlight {
+    box-shadow: 0 0 20px rgba(116, 222, 126, 0.5);
+  }
+
+  &.processing {
+    opacity: .5;
+  }
+
+  > * {
+    flex: 1 1 40%;
+    min-width: 0; // Break overflowing words if flow: row
+  }
+
+  > .data {
+    flex: 6 1 70%;
+
+    > header {
+      @include typ.font-12;
+    }
+
+    > main {
+      @include typ.font-19;
+      padding: 3px 0;
+
+      > a:first-of-type {
+        @include typ.font-semibold;
+        color: var.$clr-text;
+      }
+    }
+
+    > footer {
+      @include typ.font-16;
+      align-items: flex-start;
+      display:     flex;
+      gap: .25rem;
+    }
+  }
+
+  > .actions {
+    flex: 1 0 65px;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/**
+ * Statistics boxes with counters and label
+ */
+.count-label-list {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+
+  > * {
+    flex: 0 1 80px;
+    min-width: 0; // Break overflowing words if flow: row
+  }
+
+  .count-label {
+    background-color: #F6F4F0;
+    border: 1px solid #E7E5DF;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 80px;
+
+    // Override for dual col with emoji
+    &.dual {
+      min-width: 95px;
+
+      .number-wrapper {
+        align-items: center;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        gap: .75rem;
+        justify-content: center;
+
+        > * {
+          flex: 1 1 30%;
+          min-width: 0; // Break overflowing words if flow: row
+
+          &.rating.rating--emoji {
+            flex: 1 0 30px;
+          }
+        }
+      }
+    }
+    // end .dual override
+
+    .number-wrapper {
+      .number {
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+    }
+
+    .label-wrapper {
+      color: #828282;
+      display: block;
+      font-size: 0.875rem;
+    }
+
+    // Override for linked statistics
+    > a {
+      text-decoration: none;
+
+      > .number-wrapper {
+        color: var.$clr-text;
+      }
+      > .label-wrapper {
+        color: var.$clr-red-dark;
+        text-decoration: underline;
+
+        &:hover {
+          color: var.$clr-red-hover;
+        }
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+
+  &--dual {
+    @media(min-width: var.$br-content-medium) {
+      gap:  1%;
+
+      > * {
+        flex: 1 1 49%;
+      }
+    }
+  }
+}
+
+@mixin grid-centered() {
+  align-content: center;
+  display: grid;
+  justify-content: center;
+}
+
+.hover-highlight-bg:hover {
+  background: var.$clr-sand-130;
+}
+
+.menu-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 345px));
+  gap: 1rem;
+  width: 100%;
+}
+
+/**
+ * Defaults for most modals
+ */
+@mixin modal-defaults {
+  .modal__body {
+    font-size: 20px;
+    padding:   0;
+  }
+
+  .modal__footer {
+    align-items:     center;
+    border:          none;
+    display:         flex;
+    flex-flow:       column wrap;
+    justify-content: center;
+    margin:          1em 0 0;
+    min-width:       50px;
+
+    .buttons__button {
+      border-radius: var.$border-radius-default;
+      overflow:      hidden;
+    }
+
+    @media(min-width: var.$br-content-medium) {
+      align-items:     stretch;
+      flex-flow:       row wrap;
+      justify-content: space-evenly;
+
+      .buttons__button {
+        flex:       1 0 50px;
+        margin:     0 3px;
+        max-width:  40%;
+        min-height: 42px;
+      }
+    }
+  }
+}
+
+/**
+ * Style of outline (for focused elements)
+ */
+@mixin outline() {
+  outline:        var.$clr-jet auto 1px;
+  outline-offset: 3px;
+}
+
+/**
+ * Pages not using 100% width
+ */
+@mixin page-narrow() {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: var.$br-content-medium;
+}
+
+.rating--emoji {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+
+  &.rating--1,
+  &.rating--2 {
+    background-image: url('/assets/emoji/smiley-angry.png');
+  }
+
+  &.rating--3,
+  &.rating--4 {
+    background-image: url('/assets/emoji/smiley-sad.png');
+  }
+
+  &.rating--5,
+  &.rating--6 {
+    background-image: url('/assets/emoji/smiley-neutral.png');
+  }
+
+  &.rating--7,
+  &.rating--8 {
+    background-image: url('/assets/emoji/smiley-smile.png');
+  }
+
+  &.rating--9,
+  &.rating--10 {
+    background-image: url('/assets/emoji/smiley-grin.png');
+  }
+}
+
+/**
+ * Used by DistributionRecipientListTypePipe
+ */
+.recipient-list-type {
+  @media(min-width: var.$br-content-medium) and (hover: hover) {
+    > .placeholder {
+      border-bottom: 1px dotted var.$clr-border-60;
+      cursor: help;
+    }
+
+    > .replaced {
+      border-bottom: 1px dotted var.$clr-border-60;
+      color: var.$clr-text-70;
+      cursor: default;
+    }
+  }
+}
+
+/**
+ * Page sections
+ */
+.section {
+  display:   flex;
+  flex-flow: row wrap;
+  gap:       1rem;
+  margin:    1.5rem 0;
+
+  &.section--highlight {
+    background:    var.$clr-sand-130;
+    border:        1px solid var.$clr-border;
+    border-radius: 4px;
+    margin:        1.5rem .5rem;
+    padding:       clamp(.25rem, 2%, 2rem);
+
+    @media(min-width: var.$br-content-wide) {
+      margin: 1.5rem auto;
+    }
+  }
+
+  &.section--login {
+    background:    var.$clr-white;
+    border-radius: 12px;
+    box-shadow:    0 4px 14px 0 rgba(0, 0, 0, 0.08);
+    padding:       40px;
+    max-width:     500px;
+
+    .logo {
+      margin:    0 auto 1em;
+      max-width: 200px;
+    }
+
+    .intro {
+      margin: 0 0 1em;
+    }
+  }
+
+  &.section--summary {
+    @extend .well;
+    flex-flow: column nowrap;
+    gap: .2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    >.summary__detail {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      gap: .5rem;
+      justify-content: space-between;
+      padding: .35rem 0;
+
+      &:not(:last-child):not(.borderless) {
+        border-bottom: 1px solid var.$clr-border;
+      }
+
+      > .label {
+        @include typ.font-14;
+        flex: 1 0 150px;
+
+        &--header {
+          @include typ.font-19;
+          @include typ.font-semibold;
+          margin-top: .5rem;
+        }
+      }
+
+      > .data {
+        @include typ.font-14;
+        @include typ.font-semibold;
+        flex: 5 0 70%;
+        text-align: right;
+
+        &.status {
+          align-items: center;
+          display: flex;
+          flex-flow: row wrap;
+          gap: .25rem;
+          justify-content: flex-end;
+        }
+      }
+
+      > .feature {
+        background: var.$clr-sand-150;
+        border: 1px solid var.$clr-border;
+        border-radius: var.$border-radius-box;
+        margin: .2rem;
+        padding: .5rem .75rem;
+      }
+
+      > .fullwidth {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  &.section--app {
+    @extend .well;
+    flex-flow: column nowrap;
+    gap: .2rem;
+    margin: 0;
+    width: 100%;
+
+    > header {
+      flex: 1 1 2.5rem;
+    }
+
+    > main {
+      align-self: stretch;
+      flex: 1 0 90%;
+    }
+  }
+}
+
+/**
+ * Any content hidden from sight but available for accessibility tools such as screen readers
+ */
+.visually-hidden {
+  clip-path:   inset(100%);
+  clip:        rect(1px, 1px, 1px, 1px);
+  height:      1px;
+  overflow:    hidden;
+  position:    absolute;
+  white-space: nowrap;
+  width:       1px;
+}
+
+.well {
+  background-color: var.$clr-sand-130;
+  border: 1px solid var.$clr-border;
+  padding: 10px;
+
+  @media(min-width: var.$br-content-small) {
+    padding: 1.25rem;
+  }
+
+  &--transparent {
+    background: transparent;
+    border: 1px solid transparent;
+  }
+
+  &--sand-150 {
+    background: var.$clr-sand-150;
+  }
+
+  &--rounded {
+    border-radius: var.$border-radius-box;
+  }
+}

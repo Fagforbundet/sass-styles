@@ -1,0 +1,33 @@
+@use "variables" as var;
+
+@mixin typeahead-items-result {
+  .items-result {
+    display: block;
+    padding: .75em .6em .75em 1em;
+
+    &:not([data-index="0"]) { // Cannot use :first-child since each result is nested inside an app-list-item
+      border-top: 1px solid var.$clr-border-80;
+    }
+
+    &.active,
+    &:focus,
+    &:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    > .result-wrapper {
+      .code,
+      .description {
+        color:       var.$clr-text-120;
+        margin-left: auto;
+      }
+
+
+      .name {
+        font-weight:   600;
+        color:         var.$clr-text-70;
+        margin-bottom: .1em;
+      }
+    }
+  }
+}

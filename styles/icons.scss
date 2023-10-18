@@ -1,0 +1,274 @@
+@use "variables" as var;
+
+@mixin svg-colors($property: 'stroke') {
+  &-border {
+    #{$property}: var.$clr-border;
+
+    &-120 {
+      #{$property}: var.$clr-border-120;
+    }
+
+    &-80 {
+      #{$property}: var.$clr-border-80;
+    }
+
+    &-60 {
+      #{$property}: var.$clr-border-60;
+    }
+  }
+
+  &-green {
+    #{$property}: var.$clr-green;
+  }
+
+  &-none {
+    #{$property}: none;
+  }
+
+  &-red {
+    #{$property}: var.$clr-red;
+
+    &-dark {
+      #{$property}: var.$clr-red-dark;
+    }
+
+    &-hover {
+      #{$property}: var.$clr-red-hover;
+    }
+  }
+
+  &-text {
+    #{$property}: var.$clr-text;
+
+    &-120 {
+      #{$property}: var.$clr-text-120;
+    }
+
+    &-70 {
+      #{$property}: var.$clr-text-70;
+    }
+  }
+
+  &-transparent {
+    #{$property}: transparent;
+  }
+
+  &-white {
+    #{$property}: var.$clr-white;
+  }
+}
+
+svg-icon {
+  align-items:     center;
+  display:         inline-flex;
+  justify-content: center;
+  margin:          0;
+  padding:         0;
+
+  // Svg defaults
+  svg {
+    fill:              none;
+    font-size:         1px;
+    height:            28px;
+    stroke-linecap:    round;
+    stroke-linejoin:   round;
+    stroke-miterlimit: 10;
+    stroke-width:      1.5;
+    transition:        background-color .15s ease-in-out, color .15s ease-in-out, fill .15s ease-in-out;;
+    width:             28px;
+
+    .fill {
+      @include svg-colors('fill');
+    }
+
+    .stroke {
+      @include svg-colors('stroke');
+    }
+
+    .no {
+      &-fill {
+        fill: none;
+      }
+
+      &-stroke {
+        stroke: none;
+      }
+    }
+  }
+  // End svg defaults
+
+  // Sizes
+  &.s {
+    &12 svg {
+      height: 12px;
+      width:  12px;
+    }
+
+    &16 svg {
+      height: 16px;
+      width:  16px;
+    }
+
+    &18 svg {
+      height: 18px;
+      width:  18px;
+    }
+
+    &20 svg {
+      height: 20px;
+      width:  20px;
+    }
+
+    &22 svg {
+      height: 22px;
+      width:  22px;
+    }
+
+    &24 svg {
+      height: 24px;
+      width:  24px;
+    }
+
+    &28 svg {
+      height: 28px;
+      width:  28px;
+    }
+
+    &48 svg {
+      height: 48px;
+      width:  48px;
+    }
+
+    &100 svg {
+      height: 100px;
+      width: 100px;
+    }
+
+    &120 svg {
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  &.w196 svg {
+    width: 196px;
+  }
+  // End sizes
+
+  // Rotation
+  &.rotate {
+    &--90 {
+      &-ccw {
+        svg {
+          rotate: -90deg;
+        }
+      }
+    }
+  }
+
+  // Monochrome
+  &.monochrome {
+    &--dark,
+    &.stroke-text {
+      *:not(.stroke-none):not(.stroke-transparent) {
+        stroke: var.$clr-text;
+      }
+    }
+
+    &--gray,
+    &--disabled {
+      *:not(.stroke-none) {
+        fill-opacity: 60%;
+        stroke-opacity: 60%;
+      }
+    }
+
+    &--white {
+      *:not(.stroke-none):not(.stroke-transparent) {
+        stroke: var.$clr-white;
+      }
+    }
+  }
+  // End monochrome
+
+  // Active
+  &.active {
+    svg {
+      .active--accent {
+        &-stroke-red {
+          *:not(.stroke-none):not(.stroke-transparent) {
+            stroke: var.$clr-red;
+          }
+        }
+      }
+
+      .active--fill {
+        @include svg-colors('fill');
+      }
+
+      .active--stroke {
+        @include svg-colors('stroke');
+
+        &-2 {
+          stroke-width: 2;
+        }
+
+        &-2-2 {
+          stroke-width: 2.2;
+        }
+
+        &-2-5 {
+          stroke-width: 2.5;
+        }
+
+        &-3 {
+          stroke-width: 3;
+        }
+      }
+
+      .active--hidden {
+        visibility: hidden;
+      }
+
+      .active--visible {
+        visibility: visible;
+      }
+    }
+  }
+  // End active
+
+  // Badge (small icon overlaying main icon)
+  &.badge {
+    svg {
+      .badge--fill {
+        @include svg-colors('fill');
+      }
+
+      .badge--stroke {
+        @include svg-colors('stroke');
+      }
+    }
+  }
+  // End badge
+
+  // Colored
+  &.colored {
+    svg {
+      .colored--fill {
+        @include svg-colors('fill');
+      }
+
+      .colored--stroke {
+        @include svg-colors('stroke');
+      }
+    }
+  }
+  // End colored
+}
+
+// Transitions
+svg-icon,
+svg-icon > svg,
+svg-icon > svg * {
+  transition: background-color .15s ease-in-out, color .15s ease-in-out, fill .15s ease-in-out;
+}

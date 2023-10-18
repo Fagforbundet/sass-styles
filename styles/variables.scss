@@ -1,0 +1,67 @@
+// COLORS
+// Reds https://coolors.co/970705-d40b00-ea1106
+$clr-dark-red: #970705;
+$clr-rosso-corsa: #d40b00;
+$clr-vermillion: #ea1106;
+// Grays https://coolors.co/2f2f2f-3c3c3b-555554-6d6d6d-b5b2af
+$clr-jet: #2f2f2f;
+$clr-onyx: #3C3C3B;
+$clr-granite-gray: #666666;
+$clr-dim-gray: #6D6D6D;
+$clr-tide: #B5B2AF;
+// Whites https://coolors.co/d8d9d9-dcdad3-e7e5df-f4f1eC-eeeae5-f6f4f0-f6f7f9-faf8f4
+$clr-gainsboro: #d8d9d9;
+$clr-timberwolf: #DCDAD3;
+$clr-platinum: #EEEAE5;
+$clr-isabelline: #E7E5DF;
+$clr-neutral-gray: #F3F0ED;
+$clr-pampas: #F6F4F0;
+$clr-cultured: #F6F7F9;
+$clr-linen: #faf8f4;
+$clr-white: #fff;
+
+
+// Project palette
+$clr-border-60: $clr-tide;
+$clr-border-80: $clr-timberwolf;
+$clr-border: $clr-isabelline;
+$clr-border-120: $clr-cultured;
+$clr-disabled: $clr-granite-gray;
+$clr-red: $clr-vermillion;
+$clr-red-hover: $clr-rosso-corsa;
+$clr-red-dark: $clr-dark-red;
+$clr-green: #16B971;
+$clr-yellow: #FFCE00;
+$clr-gray: $clr-granite-gray;
+$clr-gray-120: $clr-neutral-gray;
+$clr-sand-80: $clr-gainsboro;
+$clr-sand-90: $clr-timberwolf;
+$clr-sand: $clr-platinum;
+$clr-sand-120: $clr-isabelline;
+$clr-sand-125: #F4F1EC;
+$clr-sand-130: $clr-pampas;
+$clr-sand-150: $clr-linen;
+$clr-text-70: $clr-jet;
+$clr-text: $clr-onyx;
+$clr-text-120: $clr-dim-gray;
+
+// Context colors
+$primary-btn-background-color: $clr-red;
+$primary-btn-color: $clr-white;
+$secondary-btn-background-color: $clr-tide;
+$secondary-btn-color: $clr-white;
+
+// Breakpoints
+$br-content-small: 611px;
+$br-content-medium: 768px;
+$br-content-wide: 1080px;
+$br-buffer: 50px;
+
+// Sizing and grids
+$buttons-grid-gap: 1rem;
+$buttons-min-col-width: 12rem;
+$vertical-gutter: 2rem;
+
+// Radius
+$border-radius-box: 5px;
+$border-radius-default: 6px;

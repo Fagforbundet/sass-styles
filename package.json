@@ -1,17 +1,53 @@
 {
-  "name": "@fagforbundet/ff-sass",
+  "name": "@fagforbundet/sass-styles",
+  "version": "0.0.1-rc.1",
   "description": "",
-  "version": "0.0.3",
+  "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fagforbundet/sass-styles.git"
   },
   "files": [
     "styles/**/*",
-    "fonts/**/*"
+    "assets/**/*"
   ],
+  "keywords": [
+    "sass",
+    "styles",
+    "fagforbundet"
+  ],
+  "author": {
+    "name": "Erich Json Fosse",
+    "email": "erich@halloverden.no"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fagforbundet/sass-styles/issues"
+  },
+  "homepage": "https://github.com/Fagforbundet/sass-styles/blob/main/README.md",
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@storybook/html": "^5.3.8",
-    "babel-loader": "^8.0.6"
+    "@babel/preset-env": "^7.22.20",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-styling-webpack": "^0.0.5",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/html": "^7.4.6",
+    "@storybook/html-webpack5": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
+    "css-loader": "^6.8.1",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.69.0",
+    "sass-loader": "^13.3.2",
+    "storybook": "^7.4.6",
+    "style-loader": "^3.3.3"
   }
 }

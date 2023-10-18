@@ -1,0 +1,98 @@
+@use "variables" as var;
+
+table,
+.table {
+  &.table--row-borders {
+    border-collapse: collapse;
+
+    thead > tr,
+    tr:not(:last-child) {
+      border-bottom: 1px solid var.$clr-border-80;
+    }
+  }
+
+  &.table--break-lines {
+    hyphens:       auto;
+    overflow-wrap: break-word;
+    word-break:    break-all;
+    word-wrap:     break-word;
+  }
+
+  &.table--padded {
+    th, td {
+      padding: .75rem .5rem;
+    }
+  }
+
+  &.table--full {
+    width: 100%;
+  }
+
+  // Zebra striping
+  &.table--striped-tbody tbody {
+    tr:nth-of-type(even) {
+      background: #efefef;
+    }
+    tr:nth-of-type(odd) {
+      background: #ffffff;
+    }
+  }
+
+  .td--descriptor {
+    color: var.$clr-text-70;
+    padding: .2rem .5rem .2rem 0;
+  }
+
+  .td--data {
+    color:       var.$clr-text;
+    font-weight: 600;
+    text-align:  right;
+  }
+}
+
+@mixin scrollable-table($columns, $min-width, $hover-effect: false, $is-link: false) {
+  .scrollable-table {
+    display: grid;
+    grid-gap: 0 0;
+    grid-template-columns: repeat(#{$columns}, minmax(#{$min-width}, 1fr));
+    overflow-x: auto;
+
+    .row {
+      /**
+       * Needed to be able to have a 3 element hierarchy grid:
+       * <div class="table">
+       *  <div class="row">
+       *    <div>Table content</div>
+       *    ...
+       *  </div>
+       * </div>
+       */
+      display: contents;
+
+      > div {
+        border-bottom: 1px solid var.$clr-border-80;
+        padding: 20px;
+      }
+
+      &.header {
+        font-weight: bold;
+      }
+
+      &:not(.header) {
+        @if $hover-effect {
+          &:hover {
+            > div {
+              background-color: var.$clr-platinum;
+              cursor: pointer;
+            }
+          }
+
+          @if $is-link {
+            color: var.$clr-text;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

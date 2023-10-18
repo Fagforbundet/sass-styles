@@ -1,0 +1,60 @@
+@use "variables" as var;
+@use "utilities" as utl;
+
+a {
+  color: var.$clr-red-dark;
+
+  &:focus,
+  &:focus-visible {
+    @include utl.outline();
+  }
+
+  &:hover {
+    color: var.$clr-red-hover;
+  }
+}
+
+blockquote {
+  background: var.$clr-sand-150;
+  border: 1px solid var.$clr-border;
+  border-radius: 5px;
+  margin: 0.2rem;
+  padding: 0.5rem 0.75rem;
+}
+
+h1, .h1 {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 70.39px;
+  text-align: left;
+
+  &.login {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+h2, .h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27.65px;
+}
+
+h3, .h3 {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 23.88px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    list-style-type: none;
+    padding: 0;
+  }
+}

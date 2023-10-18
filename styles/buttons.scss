@@ -1,0 +1,175 @@
+@use "variables" as var;
+
+// https://moderncss.dev/solutions-to-replace-the-12-column-grid/
+.buttons {
+  display:               grid;
+  grid-gap:              calc(#{var.$buttons-grid-gap} / 2);
+  grid-template-columns: repeat(auto-fit, minmax(var.$buttons-min-col-width, 1fr));
+  margin-top:            var.$vertical-gutter;
+
+  &--inline {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+}
+
+// The "!important"'s are there to override a tag's default styling
+.btn {
+  align-items:     center;
+  border:          none;
+  border-radius:   5px;
+  display:         inline-flex;
+  font-size:       19px;
+  font-weight:     600;
+  justify-content: center;
+  text-align:      center;
+  text-decoration: none !important;
+  padding:         1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline:        var.$clr-text auto 1px;
+    outline-offset: 1px;
+  }
+
+  &.fullwidth {
+    display:   flex;
+    height:    100%;
+    margin:    auto;
+    width:     auto;
+  }
+
+  &.inline {
+    display:   inline-flex;
+    font-size: 16px;
+    height:    100%;
+  }
+
+  &.padded {
+    padding: 11px 17px;
+  }
+
+  &.standalone {
+    display:   flex;
+    height:    100%;
+  }
+
+  > .icon {
+    margin-right: .4rem;
+  }
+
+  &--green {
+    background-color: var.$clr-green;
+    border-bottom-color: darken(var.$clr-green, 5%);
+    color: var.$clr-white;
+
+    &:hover {
+      background-color: darken(var.$clr-green, 10%);
+      border-bottom-color: darken(var.$clr-green, 12%);
+    }
+
+    &:focus {
+      border-color: darken(var.$clr-green, 12%);
+      box-shadow: 0 0 0 3px transparentize(var.$clr-green, 0.5);
+    }
+  }
+
+
+  &--primary {
+    background-color: var.$primary-btn-background-color;
+    box-shadow:       inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color:            var.$primary-btn-color !important;
+
+    &:hover {
+      background: darken(var.$primary-btn-background-color, 5%);
+    }
+  }
+
+  &--secondary {
+    background-color: var.$secondary-btn-background-color;
+    box-shadow:       inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color:            var.$secondary-btn-color !important;
+
+    &:hover {
+      background: darken(var.$secondary-btn-background-color, 5%);
+    }
+  }
+
+  &--plain,
+  &--sand {
+    background-color: var.$clr-sand;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.1);
+    color: var.$clr-text;
+
+    &:hover {
+      background-color: var.$clr-sand-80;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: var.$clr-tide;
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--micro {
+    font-size:      12px;
+    font-weight:    600;
+    line-height:    16px;
+    padding:        6px 12px;
+  }
+
+  &--small {
+    font-size:      14px;
+    font-weight:    600;
+    line-height:    18px;
+    padding:        8px 18px;
+  }
+
+  &--medium {
+    font-size:      16px;
+    font-weight:    600;
+    line-height:    20px;
+    padding:        8px 18px;
+  }
+
+  &--large {
+    font-size:      19px;
+    font-weight:    600;
+    line-height:    24px;
+    letter-spacing: 0;
+  }
+}
+
+/**
+ * Override link color for links styled to look like buttons
+ */
+a.btn {
+  &.btn--gray,
+  &.btn--sand {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: var.$clr-text;
+    }
+  }
+
+  &.btn--green {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: var.$clr-white;
+    }
+  }
+}
