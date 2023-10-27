@@ -1,55 +1,102 @@
-// COLORS
-// Reds https://coolors.co/970705-d40b00-ea1106
-$clr-dark-red: #970705;
-$clr-rosso-corsa: #d40b00;
-$clr-vermillion: #ea1106;
-// Grays https://coolors.co/2f2f2f-3c3c3b-555554-6d6d6d-b5b2af
-$clr-jet: #2f2f2f;
-$clr-onyx: #3C3C3B;
-$clr-granite-gray: #666666;
-$clr-dim-gray: #6D6D6D;
-$clr-tide: #B5B2AF;
-// Whites https://coolors.co/d8d9d9-dcdad3-e7e5df-f4f1eC-eeeae5-f6f4f0-f6f7f9-faf8f4
-$clr-gainsboro: #d8d9d9;
-$clr-timberwolf: #DCDAD3;
-$clr-platinum: #EEEAE5;
-$clr-isabelline: #E7E5DF;
-$clr-neutral-gray: #F3F0ED;
-$clr-pampas: #F6F4F0;
-$clr-cultured: #F6F7F9;
-$clr-linen: #faf8f4;
-$clr-white: #fff;
+// Color palette
+
+// FF Red
+$clr-red-150: #970705;
+$clr-red-120: #d32b1f;
+$clr-red-100: #fa3e34;
+$clr-red-70: #fc7871;
+$clr-red-50: #fc9e99;
+$clr-red-20: #fed8d6;
+
+// FF Logo Red
+$clr-logo-red-100: #e74133;
+
+// FF Violet
+$clr-violet-100: #bb29bb;
+
+// FF Green
+$clr-green-100: #16b971;
+$clr-green-70: #5cce9c;
+
+// FF Teal
+$clr-teal-100: #26acc8;
+$clr-teal-70: #66c5d9;
+$clr-teal-50: #91d5e3;
+$clr-teal-20: #d3eef4;
+
+// FF Teal Shade
+$clr-teal-shade-100: #007e95;
+$clr-teal-shade-70: #4da5b5;
+$clr-teal-shade-50: #80beca;
+$clr-teal-shade-20: #cce5ea;
+
+// FF Yellow
+$clr-yellow-100: #ffce00;
+$clr-yellow-70: #ffdd4d;
+$clr-yellow-50: #ffe680;
+$clr-yellow-20: #fff5cc;
+
+// FF Sand
+$clr-sand-100: #eeeae5;
+$clr-sand-70: #f3f0ed;
+$clr-sand-65: #f4f1ec;
+$clr-sand-60: #f6f4f0;
+$clr-sand-50: #faf8f4;
+
+// Border
+$clr-border-150: #c8c6bd;
+$clr-border-120: #dcdad3;
+$clr-border-100: #e7e5df;
+$clr-border-70: #eeeeee;
+
+// FF Gray
+$clr-gray-120: #a29f9c;
+$clr-gray-100: #b5b2af;
+
+// Text
+$clr-text-100: #3c3c3b;
+$clr-text-70: #6d6d6d;
+$clr-text-60: #828282;
+$clr-text-50: #979797;
+$clr-text-40: #b1b1b1;
+$clr-text-30: #c1c1c1;
+
+// FF White
+$clr-white-100: #ffffff;
 
 
-// Project palette
-$clr-border-60: $clr-tide;
-$clr-border-80: $clr-timberwolf;
-$clr-border: $clr-isabelline;
-$clr-border-120: $clr-cultured;
-$clr-disabled: $clr-granite-gray;
-$clr-red: $clr-vermillion;
-$clr-red-hover: $clr-rosso-corsa;
-$clr-red-dark: $clr-dark-red;
-$clr-green: #16B971;
-$clr-yellow: #FFCE00;
-$clr-gray: $clr-granite-gray;
-$clr-gray-120: $clr-neutral-gray;
-$clr-sand-80: $clr-gainsboro;
-$clr-sand-90: $clr-timberwolf;
-$clr-sand: $clr-platinum;
-$clr-sand-120: $clr-isabelline;
-$clr-sand-125: #F4F1EC;
-$clr-sand-130: $clr-pampas;
-$clr-sand-150: $clr-linen;
-$clr-text-70: $clr-jet;
-$clr-text: $clr-onyx;
-$clr-text-120: $clr-dim-gray;
 
-// Context colors
-$primary-btn-background-color: $clr-red;
-$primary-btn-color: $clr-white;
-$secondary-btn-background-color: $clr-tide;
-$secondary-btn-color: $clr-white;
+
+// Buttons
+$clr-primary-btn-bg: $clr-red-100;
+$clr-primary-btn-text: $clr-white-100;
+$clr-primary-btn-bg-hover: $clr-red-120;
+$clr-primary-btn-text-hover: $clr-white-100;
+$clr-primary-btn-inner-shadow: $clr-logo-red-100;
+
+$clr-secondary-btn-bg: $clr-sand-65;
+$clr-secondary-btn-text: $clr-text-100;
+$clr-secondary-btn-bg-hover: darken($clr-sand-65, 5%);
+$clr-secondary-btn-text-hover: $clr-text-100;
+$clr-secondary-btn-inner-shadow: $clr-border-120;
+
+$clr-teal-btn-bg: $clr-teal-100;
+$clr-teal-btn-bg-hover: $clr-teal-shade-100;
+$clr-teal-btn-inner-shadow: rgba(0, 0, 0, 0.1);
+
+$clr-disabled-btn-bg: $clr-gray-100;
+$border-radius-btn: 5px;
+$grid-gap-btn: 1rem;
+$min-col-width-btn: 12rem;
+
+
+
+// Links
+$clr-link: $clr-red-100;
+$clr-link-hover: lighten($clr-link, 5%);
+
+
+
 
 // Breakpoints
 $br-content-small: 611px;
@@ -57,11 +104,6 @@ $br-content-medium: 768px;
 $br-content-wide: 1080px;
 $br-buffer: 50px;
 
-// Sizing and grids
-$buttons-grid-gap: 1rem;
-$buttons-min-col-width: 12rem;
-$vertical-gutter: 2rem;
 
-// Radius
-$border-radius-box: 5px;
+// Borders
 $border-radius-default: 6px;

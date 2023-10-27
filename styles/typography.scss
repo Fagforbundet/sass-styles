@@ -38,6 +38,11 @@
   line-height: 24px;
 }
 
+@mixin font-20() {
+  font-size:   20px;
+  line-height: 25px;
+}
+
 @mixin font-22() {
   font-size:   22px;
   line-height: 28px;
@@ -73,16 +78,16 @@
  * Links
  */
 a {
-  color: var.$clr-red-dark;
+  color: var.$clr-red-150;
   cursor: pointer;
   text-decoration: underline;
 
   &:visited {
-    color: darken(var.$clr-red-dark, 10%);
+    color: darken(var.$clr-red-150, 10%);
   }
 
   &:hover {
-    color: var.$clr-red-dark;
+    color: var.$clr-red-150;
     text-decoration: none;
   }
 

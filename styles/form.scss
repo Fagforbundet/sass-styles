@@ -1,7 +1,7 @@
 @use "variables" as var;
 
-$clr-placeholder: var.$clr-tide;
-$clr-label: var.$clr-text;
+$clr-placeholder: var.$clr-gray-100;
+$clr-label: var.$clr-text-100;
 $font-size-input: 19px;
 $font-size-label: 19px;
 
@@ -49,7 +49,7 @@ $font-size-label: 19px;
 
       .input-group {
         &__item:not(:first-child) {
-          margin-top: calc(#{var.$vertical-gutter} / 2);
+          margin-top: calc(2rem / 2);
         }
       }
 
@@ -73,7 +73,7 @@ $font-size-label: 19px;
       }
 
       .validation {
-        color: var.$clr-red;
+        color: var.$clr-red-100;
         font-size: 80%;
         margin-top: 0.25rem;
         padding: 0 0 0 .5rem;
@@ -83,7 +83,7 @@ $font-size-label: 19px;
 
     + .form-group:not(.form-group--dual) {
       .form-control {
-        margin: calc(#{var.$vertical-gutter} / 1.5) 0 0;
+        margin: calc(2rem / 1.5) 0 0;
       }
     }
   }
@@ -108,23 +108,17 @@ $font-size-label: 19px;
     min-height: 100px;
   }
 
-  app-dropdown,
-  app-multiselect {
-    display: block;
-    width: 100%;
-  }
-
   input:not([type="checkbox"]):not([type="radio"]),
   .input,
   select,
   textarea {
-    background-color: var.$clr-white;
+    background-color: var.$clr-white-100;
     border-width:  1px;
-    border-color:  var.$clr-border;
+    border-color:  var.$clr-border-100;
     border-radius: var.$border-radius-default;
     border-style:  solid;
     box-sizing:    border-box;
-    color:         var.$clr-text;
+    color:         var.$clr-text-100;
     display:       block;
     font-size:     $font-size-input;
     font-family:   'Source Sans Pro', sans-serif;
@@ -158,8 +152,8 @@ $font-size-label: 19px;
   textarea {
     &:disabled,
     &[disabled] {
-      background: var.$clr-gainsboro !important;
-      cursor:     not-allowed !important;
+      background: var.$clr-sand-100;
+      cursor:     not-allowed;
     }
   }
 
@@ -167,16 +161,16 @@ $font-size-label: 19px;
   textarea {
     &:read-only,
     &[readonly] {
-      background: var.$clr-sand-125 !important;
-      cursor:     pointer !important;
+      background: var.$clr-sand-70;
+      cursor:     pointer;
     }
   }
 
   /* Separate rule for select, some browsers deem selects to always be :read-only */
   select[readonly],
   select.readonly {
-    background: var.$clr-sand-125 !important;
-    cursor:     pointer !important;
+    background: var.$clr-sand-70;
+    cursor:     pointer;
   }
 
   input[type="checkbox"],
@@ -191,7 +185,7 @@ $font-size-label: 19px;
     select,
     textarea {
       &.ng-invalid {
-        border-color: var.$clr-red;
+        border-color: var.$clr-red-100;
 
         &:focus {
           //box-shadow: 0 0 0 2px transparentize(var.$clr-red, 0.6);
@@ -200,7 +194,7 @@ $font-size-label: 19px;
     }
 
     input[type="radio"].ng-invalid:after {
-      border:        1px solid var.$clr-red;
+      border:        1px solid var.$clr-red-100;
       border-radius: 4px;
       content:       '';
       display:       block;

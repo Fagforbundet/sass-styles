@@ -2,7 +2,7 @@
 @use "utilities" as utl;
 
 a {
-  color: var.$clr-red-dark;
+  color: var.$clr-link;
 
   &:focus,
   &:focus-visible {
@@ -10,16 +10,8 @@ a {
   }
 
   &:hover {
-    color: var.$clr-red-hover;
+    color: var.$clr-link-hover;
   }
-}
-
-blockquote {
-  background: var.$clr-sand-150;
-  border: 1px solid var.$clr-border;
-  border-radius: 5px;
-  margin: 0.2rem;
-  padding: 0.5rem 0.75rem;
 }
 
 h1, .h1 {

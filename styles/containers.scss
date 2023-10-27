@@ -1,0 +1,29 @@
+@use "variables" as var;
+
+@mixin container-narrow() {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: var.$br-content-medium;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    max-width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: var.$br-content-wide;
+  }
+}
+
+@mixin container-extra-narrow() {
+  max-width: var.$br-content-small;
+}
+
+/**
+ * Pages not using 100% width
+ */
+@mixin page-narrow() {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: var.$br-content-medium;
+}
