@@ -18,8 +18,8 @@
 }
 
 .btn {
-  @include typ.font-19();
-  @include typ.font-semibold();
+  @include typ.font-19;
+  @include typ.font-semibold;
   font-family: 'Source Sans Pro', sans-serif;
   background-color: var.$clr-white-100;
   border: 1.5px solid transparent;
@@ -153,23 +153,23 @@
   }
 
   &--micro {
-    @include typ.font-12();
+    @include typ.font-12;
     line-height: 1rem;
     padding: 6px 12px;
   }
 
   &--small {
-    @include typ.font-14();
+    @include typ.font-14;
     padding: 7px 18px 8px 18px;
   }
 
   &--medium {
-    @include typ.font-16();
+    @include typ.font-16;
     padding: 8px 18px;
   }
 
   &--large {
-    @include font-19;
+    @include typ.font-19;
   }
 
   /* button type */
