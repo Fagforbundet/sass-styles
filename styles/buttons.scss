@@ -180,6 +180,9 @@
     background-color: transparent;
     text-decoration: underline;
     box-shadow: none;
+    text-align: left;
+    justify-content: left;
+    padding: 2px 0;
 
     &:hover {
       background-color: transparent;
@@ -200,6 +203,7 @@ a.btn {
     &:hover,
     &:active {
       color: var.$clr-text-100;
+      text-decoration: none;
     }
   }
 
@@ -211,6 +215,7 @@ a.btn {
     &:hover,
     &:active {
       color: var.$clr-white-100;
+      text-decoration: none;
     }
   }
 }
