@@ -1,11 +1,12 @@
-@use "variables" as var;
+@use 'variables' as var;
+@use 'typography' as typ;
 
 // https://moderncss.dev/solutions-to-replace-the-12-column-grid/
 .buttons {
-  display:               grid;
-  grid-gap:              calc(#{var.$grid-gap-btn} / 2);
+  display: grid;
+  grid-gap: calc(#{var.$grid-gap-btn} / 2);
   grid-template-columns: repeat(auto-fit, minmax(var.$min-col-width-btn, 1fr));
-  margin-top:            2rem;
+  margin-block-start: var.$grid-gap-btn;
 
   &--inline {
     align-items: center;
@@ -17,37 +18,41 @@
 }
 
 .btn {
-  align-items:     center;
-  border:          none;
-  border-radius:   5px;
-  display:         inline-flex;
-  font-size:       19px;
-  font-weight:     600;
+  @include typ.font-19;
+  @include typ.font-semibold;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: var.$clr-white-100;
+  border: 1.5px solid transparent;
+  border-radius: var.$border-radius-btn;
+  align-items: center;
   justify-content: center;
-  text-align:      center;
+  display: inline-flex;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.06);
+  color: var.$clr-text-100;
+  cursor: pointer;
+  justify-content: center;
+  outline: none;
+  padding-block: 11px;
+  padding-inline: 17px;
+  position: relative;
+  text-align: center;
   text-decoration: none;
-  padding:         1rem;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:focus-visible {
-    outline:        var.$clr-text-100 auto 1px;
-    outline-offset: 1px;
-  }
+  transition:
+    background-color 0.15s ease-in-out,
+    color 0.15s ease-in-out;
+  user-select: none;
 
   &.fullwidth {
-    display:   flex;
-    height:    100%;
-    margin:    auto;
-    width:     auto;
+    display: flex;
+    height: 100%;
+    margin: auto;
+    width: auto;
   }
 
   &.inline {
-    display:   inline-flex;
+    display: inline-flex;
     font-size: 16px;
-    height:    100%;
+    height: 100%;
   }
 
   &.padded {
@@ -55,12 +60,45 @@
   }
 
   &.standalone {
-    display:   flex;
-    height:    100%;
+    display: flex;
+    height: 100%;
   }
 
-  > .icon {
-    margin-right: .4rem;
+  /* Colors */
+  &--red,
+  &--primary {
+    background-color: var.$clr-primary-btn-bg;
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: var.$clr-primary-btn-text;
+
+    &:hover {
+      background: var.$clr-primary-btn-bg-hover;
+    }
+  }
+
+  &--gray,
+  &--secondary {
+    background: var.$clr-gray-100;
+    color: var.$clr-white-100;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: var.$clr-gray-120;
+    }
+
+    &:focus-visible {
+      box-shadow: 0px -2px 0px 0px #a29f9c inset;
+    }
+  }
+
+  &--sand {
+    background-color: var.$clr-secondary-btn-bg;
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: var.$clr-secondary-btn-text;
+
+    &:hover {
+      background: var.$clr-secondary-btn-bg-hover;
+    }
   }
 
   &--green {
@@ -79,77 +117,78 @@
     }
   }
 
+  &--transparent {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
 
-  &--primary {
-    background-color: var.$clr-primary-btn-bg;
-    box-shadow:       inset 0px -3px 1px rgba(0, 0, 0, 0.1);
-    color:            var.$clr-primary-btn-text;
-
-    &:hover {
-      background: var.$clr-primary-btn-bg-hover;
+    :hover {
+      background-color: transparent;
+      border-color: transparent;
     }
   }
 
-  &--secondary {
-    background-color: var.$clr-secondary-btn-bg;
-    box-shadow:       inset 0px -3px 1px rgba(0, 0, 0, 0.1);
-    color:            var.$clr-secondary-btn-text;
-
-    &:hover {
-      background: var.$clr-secondary-btn-bg-hover;
+  /* State */
+  &:active {
+    &:not(:disabled) {
+      margin-bottom: -1px;
+      margin-top: 1px;
     }
   }
 
-  &--plain,
-  &--sand {
-    background-color: var.$clr-sand-100;
-    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.1);
-    color: var.$clr-text-100;
-
-    &:hover {
-      background-color: var.$clr-sand-70;
-    }
+  &:focus-visible {
+    outline: var.$clr-text-100 auto 1px;
+    outline-offset: 1px;
   }
 
-  &.disabled {
+  &:disabled {
     cursor: not-allowed;
     background-color: var.$clr-disabled-btn-bg;
   }
 
-  &--block {
+  /* Size */
+
+  &--stretch {
     width: 100%;
   }
 
   &--micro {
-    font-size:      12px;
-    font-weight:    600;
-    line-height:    16px;
-    padding:        6px 12px;
+    @include typ.font-12;
+    line-height: 1rem;
+    padding: 6px 12px;
   }
 
   &--small {
-    font-size:      14px;
-    font-weight:    600;
-    line-height:    18px;
-    padding:        8px 18px;
+    @include typ.font-14;
+    padding: 7px 18px 8px 18px;
   }
 
   &--medium {
-    font-size:      16px;
-    font-weight:    600;
-    line-height:    20px;
-    padding:        8px 18px;
+    @include typ.font-16;
+    padding: 8px 18px;
   }
 
   &--large {
-    font-size:      19px;
-    font-weight:    600;
-    line-height:    24px;
-    letter-spacing: 0;
+    @include typ.font-19;
   }
 
-  &--transparent {
+  /* button type */
+
+  &--link {
+    color: var.$clr-link;
+    font-weight: normal;
     background-color: transparent;
+    text-decoration: underline;
+    box-shadow: none;
+    text-align: left;
+    justify-content: left;
+    padding: 2px 0;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+      color: var.$clr-link-hover;
+    }
   }
 }
 
@@ -164,15 +203,19 @@ a.btn {
     &:hover,
     &:active {
       color: var.$clr-text-100;
+      text-decoration: none;
     }
   }
 
+  &.btn--primary,
+  &.btn--secondary,
   &.btn--green {
     &:link,
     &:visited,
     &:hover,
     &:active {
       color: var.$clr-white-100;
+      text-decoration: none;
     }
   }
 }
