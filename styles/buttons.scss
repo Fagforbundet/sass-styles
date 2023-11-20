@@ -152,7 +152,7 @@
     width: 100%;
   }
 
-  &--micro {
+  &--mini {
     @include typ.font-12;
     line-height: 1rem;
     padding: 6px 12px;
@@ -170,6 +170,11 @@
 
   &--large {
     @include typ.font-19;
+  }
+
+  &--extra-large {
+    @include typ.font-24;
+    padding: 18.75px 22.5px 20px 22.5px;
   }
 
   /* button type */
