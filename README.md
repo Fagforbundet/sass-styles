@@ -1,4 +1,4 @@
-# @fagforbundet/sass-styles
+# @fagforbundet/design-library
 
 ## Fonts
 Font files are present in this project for anyone who might need them, but Google Fonts serve them as well.
@@ -14,3 +14,4 @@ Font files are present in this project for anyone who might need them, but Googl
 
 ## TODO
 - assets cleanup
+- documentation

@@ -1,6 +1,6 @@
 {
-  "name": "@fagforbundet/sass-styles",
-  "version": "0.0.1-rc.9",
+  "name": "@fagforbundet/design-library",
+  "version": "0.0.1-rc.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fagforbundet/sass-styles.git"
+    "url": "git+https://github.com/Fagforbundet/design-library.git"
   },
   "files": [
     "styles/**/*",
     "assets/**/*"
   ],
   "keywords": [
+    "design",
+    "fonts",
+    "icons",
     "sass",
     "styles",
     "fagforbundet"
@@ -27,9 +30,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Fagforbundet/sass-styles/issues"
+    "url": "https://github.com/Fagforbundet/design-library/issues"
   },
-  "homepage": "https://github.com/Fagforbundet/sass-styles/blob/main/README.md",
+  "homepage": "https://github.com/Fagforbundet/design-library/blob/main/README.md",
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
     "@storybook/addon-essentials": "^7.4.6",
