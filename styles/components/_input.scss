@@ -1,0 +1,85 @@
+@use 'abstracts' as var;
+@use 'utilities/outline';
+
+$clr-placeholder: var.$clr-gray-100;
+$clr-label: var.$clr-text-100;
+
+label {
+  color: $clr-label;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  margin: 0 0 0.3em;
+}
+
+textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+input,
+.input,
+select,
+textarea {
+  background-color: var.$clr-white-100;
+  border-width: 1px;
+  border-color: var.$clr-border-100;
+  border-radius: var.$border-radius-default;
+  border-style: solid;
+  box-sizing: border-box;
+  color: var.$clr-text-100;
+  display: block;
+
+  padding: 15px 18px;
+  width: 100%;
+
+  &.secondary {
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    opacity: 1;
+  }
+
+  &::placeholder {
+    /* Most modern browsers support this now. */
+    color: $clr-placeholder;
+  }
+}
+
+input,
+select,
+textarea {
+  &:focus-visible {
+    @include outline.focused;
+  }
+}
+
+input,
+textarea {
+  &:read-only,
+  &[readonly] {
+    background: var.$clr-sand-70;
+    cursor: default;
+  }
+}
+
+input,
+select,
+textarea {
+  &:disabled,
+  &[disabled] {
+    background: var.$clr-sand-100;
+    cursor: not-allowed;
+  }
+}
+
+/* Separate rule for select, some browsers deem selects to always be :read-only */
+select[readonly],
+select.readonly {
+  background: var.$clr-sand-70;
+  cursor: pointer;
+}

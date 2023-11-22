@@ -1,0 +1,13 @@
+@mixin no-scroll($class-name: 'no-scroll') {
+  body {
+    &.#{$class-name} {
+      height: 100vh;
+      max-height: 100vh;
+      overflow: hidden;
+    }
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,28 @@
+@use 'abstracts' as var;
+@use 'utilities';
+
+a {
+  color: var.$clr-link;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:visited {
+    color: var.$clr-link-hover;
+  }
+
+  &:hover {
+    color: var.$clr-link-hover;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:focus-visible {
+    @include utilities.outline;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    // Increase trigger size for touch
+    display: inline-block;
+    padding: 0.5rem;
+  }
+}

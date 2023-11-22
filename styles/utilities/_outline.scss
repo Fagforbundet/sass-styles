@@ -1,0 +1,6 @@
+@use 'abstracts' as var;
+
+@mixin focused() {
+  outline: var.$clr-text-70 auto 1px !important;
+  outline-offset: 2px !important;
+}

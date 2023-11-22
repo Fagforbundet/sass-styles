@@ -1,0 +1,37 @@
+@use 'abstracts' as var;
+@use 'typography' as typ;
+
+@mixin reset() {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var.$clr-sand-50;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var.$clr-text-100;
+    @include typ.font-19;
+    @include typ.font-normal;
+    min-height: 100vh;
+    text-align: left;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
