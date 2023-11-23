@@ -5,8 +5,3 @@ form,
   flex-flow: column wrap;
   gap: 0.5em;
 }
-
-/* No spacing on top */
-form > .form-group:first-of-type > .form-control {
-  margin-top: 0;
-}
