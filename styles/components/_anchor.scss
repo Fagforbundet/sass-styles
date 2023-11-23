@@ -1,5 +1,5 @@
-@use 'abstracts' as *;
-@use 'utilities';
+@use '../abstracts' as *;
+@use '../utilities';
 
 a {
   color: $clr-link;

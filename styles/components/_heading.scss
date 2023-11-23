@@ -1,5 +1,5 @@
-@use 'abstracts' as *;
-@use 'base/typography' as typ;
+@use '../abstracts' as *;
+@use '../base/typography' as typ;
 
 @mixin h1() {
   @include typ.font-bold;

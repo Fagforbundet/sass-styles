@@ -1,5 +1,5 @@
-@use 'abstracts' as *;
-@use 'base/typography';
+@use '../../abstracts' as *;
+@use '../../base/typography' as typ;
 
 .btn {
   @include typ.font-semibold;

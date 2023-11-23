@@ -1,5 +1,5 @@
-@use 'abstracts' as *;
-@use 'utilities/outline';
+@use '../../abstracts' as *;
+@use '../../utilities/outline';
 
 label {
   color: $clr-label;
