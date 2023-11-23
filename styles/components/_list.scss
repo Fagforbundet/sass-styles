@@ -1,4 +1,4 @@
-@use 'abstracts' as var;
+@use 'abstracts' as *;
 
 ul {
   list-style-type: none;
@@ -18,7 +18,7 @@ ul {
 
     &:not([data-index='0']) {
       // Cannot use :first-child since each result is nested inside an app-list-item
-      border-top: 1px solid var.$clr-border-70;
+      border-top: 1px solid $clr-border-70;
     }
 
     &.active,
@@ -30,13 +30,13 @@ ul {
     > .result-wrapper {
       .code,
       .description {
-        color: var.$clr-text-100;
+        color: $clr-text-100;
         margin-left: auto;
       }
 
       .name {
         font-weight: 600;
-        color: var.$clr-text-70;
+        color: $clr-text-70;
         margin-bottom: 0.1em;
       }
     }

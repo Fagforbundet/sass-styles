@@ -1,8 +1,5 @@
-@use 'abstracts' as var;
+@use 'abstracts' as *;
 @use 'utilities/outline';
-
-$clr-placeholder: var.$clr-gray-100;
-$clr-label: var.$clr-text-100;
 
 label {
   color: $clr-label;
@@ -22,13 +19,13 @@ input,
 .input,
 select,
 textarea {
-  background-color: var.$clr-white-100;
+  background-color: $clr-white-100;
   border-width: 1px;
-  border-color: var.$clr-border-100;
-  border-radius: var.$border-radius-default;
+  border-color: $clr-border-100;
+  border-radius: $border-radius-default;
   border-style: solid;
   box-sizing: border-box;
-  color: var.$clr-text-100;
+  color: $clr-text-100;
   display: block;
 
   padding: 15px 18px;
@@ -62,7 +59,7 @@ input,
 textarea {
   &:read-only,
   &[readonly] {
-    background: var.$clr-sand-70;
+    background: $clr-sand-70;
     cursor: default;
   }
 }
@@ -72,7 +69,7 @@ select,
 textarea {
   &:disabled,
   &[disabled] {
-    background: var.$clr-sand-100;
+    background: $clr-sand-100;
     cursor: not-allowed;
   }
 }
@@ -80,6 +77,6 @@ textarea {
 /* Separate rule for select, some browsers deem selects to always be :read-only */
 select[readonly],
 select.readonly {
-  background: var.$clr-sand-70;
+  background: $clr-sand-70;
   cursor: pointer;
 }

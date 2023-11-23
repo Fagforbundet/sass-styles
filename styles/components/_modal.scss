@@ -1,4 +1,4 @@
-@use 'abstracts' as var;
+@use 'abstracts' as *;
 
 /**
  * Defaults for most modals
@@ -21,11 +21,11 @@
     min-width: 50px;
 
     .buttons__button {
-      border-radius: var.$border-radius-default;
+      border-radius: $border-radius-default;
       overflow: hidden;
     }
 
-    @media (min-width: var.$br-content-medium) {
+    @media (min-width: $br-content-medium) {
       align-items: stretch;
       flex-flow: row wrap;
       justify-content: space-evenly;

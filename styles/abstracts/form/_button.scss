@@ -1,0 +1,16 @@
+@use '../colors' as *;
+
+$disabled-bg: $clr-gray-100;
+$border-radius-btn: 5px;
+
+$primary-bg: $clr-red-100;
+$primary-text: $clr-white-100;
+$primary-bg-hover: $clr-red-120;
+$primary-text-hover: $clr-white-100;
+$primary-inner-shadow: $clr-logo-red-100;
+
+$secondary-bg: $clr-sand-65;
+$secondary-text: $clr-text-100;
+$secondary-bg-hover: darken($clr-sand-65, 5%);
+$secondary-text-hover: $clr-text-100;
+$secondary-inner-shadow: $clr-border-120;

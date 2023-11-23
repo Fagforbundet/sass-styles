@@ -1,4 +1,4 @@
-@use 'abstracts' as var;
+@use 'abstracts' as *;
 @use 'typography' as typ;
 
 @mixin reset() {
@@ -9,9 +9,9 @@
   }
 
   body {
-    background-color: var.$clr-sand-50;
+    background-color: $clr-sand-50;
     font-family: 'Source Sans Pro', sans-serif;
-    color: var.$clr-text-100;
+    color: $clr-text-100;
     @include typ.font-19;
     @include typ.font-normal;
     min-height: 100vh;

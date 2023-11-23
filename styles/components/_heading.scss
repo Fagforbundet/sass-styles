@@ -1,12 +1,12 @@
+@use 'abstracts' as *;
 @use 'base/typography' as typ;
-@use 'abstracts' as var;
 
 @mixin h1() {
   @include typ.font-bold;
   font-size: 1.875rem;
   line-height: 2.375rem;
 
-  @media (min-width: var.$br-content-small) {
+  @media (min-width: $br-content-small) {
     font-size: 3.5rem;
     line-height: 4.375rem;
   }
@@ -17,7 +17,7 @@
   font-size: 1.875rem;
   line-height: 2.375rem;
 
-  @media (min-width: var.$br-content-small) {
+  @media (min-width: $br-content-small) {
     font-size: 2rem;
     line-height: 2.5rem;
   }
@@ -28,7 +28,7 @@
   font-size: 1.375rem;
   line-height: 1.75rem;
 
-  @media (min-width: var.$br-content-small) {
+  @media (min-width: $br-content-small) {
     font-size: 1.6875rem;
     line-height: 2.125rem;
   }

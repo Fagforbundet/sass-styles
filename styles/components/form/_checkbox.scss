@@ -1,0 +1,44 @@
+@use 'utilities/outline';
+
+input[type='checkbox'] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+label:has(input[type='checkbox']) {
+  display: flex;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  padding: 5px;
+  margin: 0;
+
+  // checkbox (unchecked)
+  &::before {
+    content: '';
+    width: 1.15em;
+    height: 1.15em;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='28px/Form Checkbox'%3E%3Crect id='Rectangle 8' x='1' y='3' width='22' height='22' rx='4' fill='white' stroke='%23DCDAD3' stroke-width='1.5' stroke-linecap='square'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+// checked checkbox
+label:has(input[type='checkbox']:checked) {
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='28px/Form Checkbox Selected'%3E%3Crect id='Rectangle 5.1' x='1' y='3' width='22' height='22' rx='4' fill='white' stroke='%23DCDAD3' stroke-width='1.5' stroke-linecap='square'/%3E%3Cpath id='Vector 3.1' d='M5.75 14L10 18L17.75 9.5' stroke='%233C3C3B' stroke-width='1.75'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+label:has(input[type='checkbox']:focus, input[type='checkbox']:focus-visible) {
+  @include outline.focused;
+}

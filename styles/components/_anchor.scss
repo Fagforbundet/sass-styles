@@ -1,17 +1,17 @@
-@use 'abstracts' as var;
+@use 'abstracts' as *;
 @use 'utilities';
 
 a {
-  color: var.$clr-link;
+  color: $clr-link;
   cursor: pointer;
   text-decoration: underline;
 
   &:visited {
-    color: var.$clr-link-hover;
+    color: $clr-link-hover;
   }
 
   &:hover {
-    color: var.$clr-link-hover;
+    color: $clr-link-hover;
     text-decoration: none;
   }
 
