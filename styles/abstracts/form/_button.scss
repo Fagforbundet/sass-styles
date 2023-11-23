@@ -14,3 +14,89 @@ $secondary-text: $clr-text-100;
 $secondary-bg-hover: darken($clr-sand-65, 5%);
 $secondary-text-hover: $clr-text-100;
 $secondary-inner-shadow: $clr-border-120;
+
+@mixin primary() {
+  &--red,
+  &--primary {
+    background-color: $primary-bg;
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: $primary-text;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $primary-text;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: $primary-bg-hover;
+    }
+  }
+}
+
+@mixin secondary() {
+  &--gray,
+  &--secondary {
+    background: $clr-gray-100;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.1);
+    color: $clr-white-100;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $clr-white-100;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $clr-gray-120;
+    }
+
+    &:focus-visible {
+      box-shadow: 0px -2px 0px 0px #a29f9c inset;
+    }
+  }
+}
+
+@mixin sand() {
+  &--sand {
+    background-color: $secondary-bg;
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: $secondary-text;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $secondary-text;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: $secondary-bg-hover;
+    }
+  }
+}
+
+@mixin transparent() {
+  &--transparent {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+
+    :hover {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+}
