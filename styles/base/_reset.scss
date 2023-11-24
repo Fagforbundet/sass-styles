@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
-@use 'typography' as typ;
+@use '../base/typography' as typ;
 
 @mixin reset() {
   *,
