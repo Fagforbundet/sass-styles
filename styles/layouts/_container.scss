@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+@mixin container-narrow() {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: $br-content-medium;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    max-width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: $br-content-wide;
+  }
+}
+
+@mixin container-extra-narrow() {
+  max-width: $br-content-small;
+}
+
+/**
+ * Pages not using 100% width
+ */
+@mixin page-narrow() {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: $br-content-medium;
+}

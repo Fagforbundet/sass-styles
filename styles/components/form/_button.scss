@@ -1,0 +1,98 @@
+@use '../../abstracts' as *;
+@use '../../base/typography' as typ;
+
+@mixin btn() {
+  @include typ.font-semibold;
+  background-color: $clr-white-100;
+  border: 1.5px solid transparent;
+  border-radius: $border-radius-btn;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  justify-content: center;
+  outline: none;
+  padding-block: 11px;
+  padding-inline: 17px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease-in-out,
+    color 0.15s ease-in-out;
+  user-select: none;
+
+  @include primary;
+  @include secondary;
+  @include sand;
+  @include transparent;
+
+  /* State */
+  &:active {
+    &:not(:disabled) {
+      margin-bottom: -1px;
+      margin-top: 1px;
+    }
+  }
+
+  &:focus-visible {
+    outline: $clr-text-100 auto 1px;
+    outline-offset: 1px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $disabled-bg;
+  }
+
+  /* Size */
+
+  &--stretch {
+    width: 100%;
+  }
+
+  &--mini {
+    @include typ.font-12;
+    line-height: 1rem;
+    padding: 6px 12px;
+  }
+
+  &--small {
+    @include typ.font-14;
+    padding: 7px 18px 8px 18px;
+  }
+
+  &--medium {
+    @include typ.font-16;
+    padding: 8px 18px;
+  }
+
+  &--large {
+    @include typ.font-19;
+  }
+
+  &--extra-large {
+    @include typ.font-24;
+    padding: 18.75px 22.5px 20px 22.5px;
+  }
+
+  /* button type */
+
+  &--link {
+    color: $clr-link;
+    font-weight: normal;
+    background-color: transparent;
+    text-decoration: underline;
+    box-shadow: none;
+    text-align: left;
+    justify-content: left;
+    padding: 2px 0;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+      color: $clr-link-hover;
+    }
+  }
+}

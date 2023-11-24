@@ -1,0 +1,14 @@
+// Breakpoints
+$br-content-small: 611px;
+$br-content-medium: 768px;
+$br-content-wide: 1080px;
+$br-buffer: 50px;
+
+// Borders
+$border-radius-default: 6px;
+
+$breakpoints: (
+  small: $br-content-small,
+  medium: $br-content-medium,
+  wide: $br-content-wide,
+);

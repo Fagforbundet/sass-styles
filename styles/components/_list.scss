@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+@mixin typeahead-items-result {
+  .items-result {
+    display: block;
+    padding: 0.75em 0.6em 0.75em 1em;
+
+    &:not([data-index='0']) {
+      // Cannot use :first-child since each result is nested inside an app-list-item
+      border-top: 1px solid $clr-border-70;
+    }
+
+    &.active,
+    &:focus,
+    &:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    > .result-wrapper {
+      .code,
+      .description {
+        color: $clr-text-100;
+        margin-left: auto;
+      }
+
+      .name {
+        font-weight: 600;
+        color: $clr-text-70;
+        margin-bottom: 0.1em;
+      }
+    }
+  }
+}
