@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+
+@mixin card {
+  background-color: colors.$clr-sand-60;
+  padding: 1rem;
+  border-radius: variables.$border-radius-default;
+  border: 1px solid colors.$clr-border-100;
+  color: colors.$clr-text-100;
+
+  @include mixins.container-query(small) {
+    padding: 1.5rem;
+  }
+}
+
+@mixin card-list-item {
+  padding: 12px 22px;
+  background-color: colors.$clr-sand-50;
+  border-radius: 8px;
+  border: 1px solid colors.$clr-border-100;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.04);
+}
