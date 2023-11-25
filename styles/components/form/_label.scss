@@ -1,0 +1,21 @@
+@use '../../abstracts' as *;
+
+label {
+  color: $clr-label;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  margin: 0 0 0.3em;
+}
+
+label:has(input[type='text']) {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+
+  input {
+    font-weight: 400;
+  }
+}

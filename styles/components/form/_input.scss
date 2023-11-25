@@ -1,15 +1,6 @@
 @use '../../abstracts' as *;
 @use '../../utilities/outline';
 
-label {
-  color: $clr-label;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 600;
-  letter-spacing: 0.1px;
-  margin: 0 0 0.3em;
-}
-
 textarea {
   resize: none;
   min-height: 100px;
