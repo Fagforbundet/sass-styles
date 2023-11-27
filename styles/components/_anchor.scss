@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
-@use '../utilities';
+@use '../utilities/outline';
 
 a {
   color: $clr-link;
@@ -17,7 +17,7 @@ a {
 
   &:focus,
   &:focus-visible {
-    @include utilities.outline;
+    @include outline.focused;
   }
 
   @media (hover: none) and (pointer: coarse) {
