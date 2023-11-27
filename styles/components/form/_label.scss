@@ -9,7 +9,7 @@ label {
   margin: 0 0 0.3em;
 }
 
-label:has(input[type='text']) {
+label:has(:not(input[type='checkbox'])) {
   display: flex;
   flex-direction: column;
   gap: 6px;

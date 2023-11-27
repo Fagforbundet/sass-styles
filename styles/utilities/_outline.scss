@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
 @mixin focused() {
-  outline: $clr-text-70 auto 1px !important;
-  outline-offset: 2px !important;
+  outline: $clr-text-70 auto 1px;
+  outline-offset: 2px;
 }

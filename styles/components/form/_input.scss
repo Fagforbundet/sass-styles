@@ -6,68 +6,63 @@ textarea {
   min-height: 100px;
 }
 
-input,
-.input,
-select,
-textarea {
+@mixin input-field() {
   background-color: $clr-white-100;
-  border-width: 1px;
-  border-color: $clr-border-100;
+  border: 1px solid $clr-border-100;
   border-radius: $border-radius-default;
   border-style: solid;
   box-sizing: border-box;
   color: $clr-text-100;
   display: block;
-
-  padding: 15px 18px;
+  line-height: 30px;
+  padding: 10px;
   width: 100%;
+
+  &[type='text'] {
+    line-height: 30px;
+  }
 
   &.secondary {
     background-color: transparent;
     cursor: pointer;
   }
 
-  &::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    opacity: 1;
-  }
-
   &::placeholder {
-    /* Most modern browsers support this now. */
     color: $clr-placeholder;
   }
-}
 
-input,
-select,
-textarea {
-  &:focus-visible {
+  &:focus-visible,
+  &:has(input:focus-visible) {
     @include outline.focused;
   }
-}
 
-input,
-textarea {
-  &:read-only,
-  &[readonly] {
-    background: $clr-sand-70;
+  &[readonly],
+  &:has(input[readonly]) {
+    background-color: $clr-sand-70;
     cursor: default;
+  }
+
+  &:disabled,
+  &[disabled],
+  &:has(input[disabled]) {
+    background-color: $clr-sand-100;
+    cursor: not-allowed;
+  }
+
+  &.transparent {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 }
 
 input,
 select,
 textarea {
-  &:disabled,
-  &[disabled] {
-    background: $clr-sand-100;
-    cursor: not-allowed;
-  }
-}
-
-/* Separate rule for select, some browsers deem selects to always be :read-only */
-select[readonly],
-select.readonly {
-  background: $clr-sand-70;
-  cursor: pointer;
+  @include input-field();
 }
