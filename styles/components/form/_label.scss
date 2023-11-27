@@ -15,7 +15,7 @@ label:has(:not(input[type='checkbox'])) {
   gap: 6px;
   margin: 0;
 
-  input {
+  * {
     font-weight: 400;
   }
 }
