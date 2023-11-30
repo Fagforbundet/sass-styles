@@ -5,7 +5,7 @@
  */
 @mixin modal-defaults {
   display: block;
-  width: 555px;
+  max-width: 555px;
 
   .modal__body {
     font-size: 20px;

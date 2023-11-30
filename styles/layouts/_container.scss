@@ -27,3 +27,14 @@
   margin: 0 auto 4rem;
   max-width: $br-content-medium;
 }
+
+@mixin narrow() {
+  display: grid;
+  $content-width: min(100% - $content-inline-margin * 2, $content-width-wide);
+  grid-template-columns: 1fr [content-start] $content-width [content-end] 1fr;
+  margin-bottom: 4rem;
+
+  & > * {
+    grid-column: content;
+  }
+}
