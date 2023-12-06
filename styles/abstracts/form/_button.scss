@@ -94,7 +94,8 @@ $secondary-inner-shadow: $clr-border-120;
       text-decoration: none;
     }
 
-    :hover {
+    &:hover,
+    &:disabled {
       background-color: transparent;
       border-color: transparent;
     }
