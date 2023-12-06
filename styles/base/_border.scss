@@ -1,0 +1,5 @@
+@use '../abstracts' as *;
+
+.border-default {
+  border: 1px solid $clr-border-100;
+}
