@@ -49,6 +49,13 @@ textarea {
     cursor: not-allowed;
   }
 
+  &.dropdown-input-field {
+    &.panel-open {
+      outline: none;
+      @include outline.focused-box-shadow;
+    }
+  }
+
   &.transparent {
     background-color: transparent;
     padding: 0;
