@@ -4,3 +4,7 @@
   outline: $clr-text-70 auto 1px;
   outline-offset: 2px;
 }
+
+@mixin focused-box-shadow() {
+  box-shadow: 0 0 0 3px rgba(151, 154, 154, 0.18);
+}

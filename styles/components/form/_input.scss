@@ -55,7 +55,8 @@ textarea {
     border: none;
     border-radius: 0;
 
-    &:focus-visible {
+    &:focus-visible,
+    &:has(input:focus-visible) {
       outline: none;
     }
   }
