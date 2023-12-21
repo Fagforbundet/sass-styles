@@ -53,6 +53,7 @@ textarea {
     &.panel-open {
       outline: none;
       @include outline.focused-box-shadow;
+      border-radius: $border-radius-default $border-radius-default 0 0;
     }
   }
 
