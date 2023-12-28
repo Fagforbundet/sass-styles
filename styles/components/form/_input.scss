@@ -53,7 +53,14 @@ textarea {
     &.panel-open {
       outline: none;
       @include outline.focused-box-shadow;
+      border: 1px solid $clr-text-50;
       border-radius: $border-radius-default $border-radius-default 0 0;
+
+      &.transparent {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
     }
   }
 
