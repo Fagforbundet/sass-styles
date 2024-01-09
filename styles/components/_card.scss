@@ -2,6 +2,7 @@
 @use '../abstracts/colors';
 @use '../abstracts/mixins';
 @use '../abstracts/variables';
+@use '../base/typography';
 
 @mixin card {
   background-color: colors.$clr-sand-60;
@@ -12,6 +13,24 @@
 
   @include mixins.container-query(small) {
     padding: 1.5rem;
+  }
+}
+
+@mixin card-table {
+  table.card-table {
+    @include typography.font-19;
+    width: 100%;
+
+    tr {
+      th {
+        font-weight: 600;
+      }
+
+      th, td {
+        border-bottom: 1px solid colors.$clr-border-100;
+        padding: 8px 0;
+      }
+    }
   }
 }
 
