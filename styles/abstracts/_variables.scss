@@ -4,15 +4,23 @@ $br-content-medium: 768px;
 $br-content-wide: 956px;
 $br-buffer: 50px;
 
-// Content width
-$content-inline-margin: 1rem;
-$content-width-wide: calc($br-content-wide - $content-inline-margin * 2);
-
-// Borders
-$border-radius-default: 4px;
-
 $breakpoints: (
   small: $br-content-small,
   medium: $br-content-medium,
   wide: $br-content-wide,
 );
+
+// Content width
+$content-inline-margin: 1rem;
+$content-width-wide: calc($br-content-wide - $content-inline-margin * 2);
+$content-width-medium: calc($br-content-medium - $content-inline-margin * 2);
+$content-width-small: calc($br-content-small - $content-inline-margin * 2);
+
+$content-widths: (
+  small: $content-width-small,
+  medium: $content-width-medium,
+  wide: $content-width-wide,
+);
+
+// Borders
+$border-radius-default: 4px;

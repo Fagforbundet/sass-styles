@@ -29,8 +29,13 @@
 }
 
 @mixin narrow() {
+  @include grid;
+}
+
+@mixin grid($size: wide) {
   display: grid;
-  $content-width: min(100% - $content-inline-margin * 2, $content-width-wide);
+  $max-width: map-get($content-widths, $size);
+  $content-width: min(100% - $content-inline-margin * 2, $max-width);
   grid-template-columns: 1fr [content-start] $content-width [content-end] 1fr;
   margin-bottom: 4rem;
 
