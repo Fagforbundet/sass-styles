@@ -5,10 +5,6 @@
   outline-offset: 2px;
 }
 
-@mixin error() {
-  outline: 1px solid $clr-red-100;
-}
-
 @mixin focused-box-shadow() {
   box-shadow: 0 0 0 3px rgba(151, 154, 154, 0.18);
 }
