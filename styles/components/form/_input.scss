@@ -49,6 +49,11 @@ textarea {
     cursor: not-allowed;
   }
 
+  @at-root form.ng-submitted .ng-invalid,
+    &.ng-touched.ng-invalid {
+    @include outline.error;
+  }
+
   &.dropdown-input-field {
     &.panel-open {
       outline: none;
