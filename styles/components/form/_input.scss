@@ -1,5 +1,6 @@
-@use '../../abstracts' as *;
 @use '../../utilities/outline';
+@use './control-error';
+@use '../../abstracts' as *;
 
 textarea {
   resize: none;
@@ -49,10 +50,7 @@ textarea {
     cursor: not-allowed;
   }
 
-  @at-root form.ng-submitted .ng-invalid,
-    &.ng-touched.ng-invalid {
-    @include outline.error;
-  }
+  @include control-error.outline;
 
   &.dropdown-input-field {
     &.panel-open {

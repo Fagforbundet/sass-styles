@@ -1,0 +1,37 @@
+@use '../../utilities/outline';
+@use '../../base/typography';
+
+@mixin text() {
+  @include typography.control-error;
+  visibility: hidden;
+
+  &.collapse {
+    display: none;
+  }
+
+  @at-root form.ng-submitted .ng-invalid + &,
+    .ng-touched.ng-invalid + &,
+    .ng-touched.invalid + & {
+    visibility: visible;
+
+    &.collapse {
+      display: block;
+    }
+  }
+}
+
+@mixin outline() {
+  @at-root form.ng-submitted .ng-invalid,
+    &.ng-touched.ng-invalid,
+    &.ng-touched.invalid {
+    @include outline.error;
+  }
+}
+
+.control-error-text {
+  @include text;
+}
+
+.control-error-outline {
+  @include outline;
+}
