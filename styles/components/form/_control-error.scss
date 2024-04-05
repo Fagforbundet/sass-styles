@@ -5,17 +5,20 @@
   @include typography.control-error;
   visibility: hidden;
 
-  &.collapse {
+  &.collapse,
+  &.transparent {
     display: none;
   }
 
   @at-root form.ng-submitted .ng-invalid + &,
     .ng-touched.ng-invalid + &,
     .ng-touched.invalid + & {
-    visibility: visible;
+    &:not(.transparent) {
+      visibility: visible;
 
-    &.collapse {
-      display: block;
+      &.collapse {
+        display: block;
+      }
     }
   }
 }
@@ -24,7 +27,9 @@
   @at-root form.ng-submitted .ng-invalid,
     &.ng-touched.ng-invalid,
     &.ng-touched.invalid {
-    @include outline.error;
+    &:not(.transparent) {
+      @include outline.error;
+    }
   }
 }
 
