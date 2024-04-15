@@ -23,28 +23,11 @@
     color 0.15s ease-in-out;
   user-select: none;
 
-  /* State */
-  &:active {
-    &:not(:disabled) {
-      margin-bottom: -1px;
-      margin-top: 1px;
-    }
-  }
-
-  &:focus-visible {
-    outline: $clr-text-100 auto 1px;
-    outline-offset: 1px;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: $disabled-bg;
-  }
-
   @include primary;
   @include secondary;
   @include sand;
   @include transparent;
+  @include white;
 
   /* Size */
 
@@ -75,6 +58,28 @@
   &--extra-large {
     @include typ.font-24;
     padding: 18.75px 22.5px 20px 22.5px;
+  }
+
+  /* State */
+
+  &:active {
+    &:not(:disabled) {
+      margin-bottom: -1px;
+      margin-top: 1px;
+    }
+  }
+
+  &:focus-visible {
+    outline: $clr-text-100 auto 1px;
+    outline-offset: 1px;
+  }
+
+  &:disabled:hover,
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $disabled-bg;
+    box-shadow: none;
+    color: $disabled-text;
   }
 
   /* button type */
