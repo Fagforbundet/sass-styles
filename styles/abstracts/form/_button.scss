@@ -1,6 +1,7 @@
 @use '../colors' as *;
 
 $disabled-bg: $clr-gray-100;
+$disabled-text: $clr-white-100;
 $border-radius-btn: 5px;
 
 $primary-bg: $clr-red-100;
@@ -77,6 +78,26 @@ $secondary-inner-shadow: $clr-border-120;
 
     &:hover {
       background: $secondary-bg-hover;
+    }
+  }
+}
+
+@mixin white() {
+  &--white {
+    background-color: $clr-white-100;
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: $clr-text-100;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $clr-text-100;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: darken($clr-white-100, 5%);
     }
   }
 }

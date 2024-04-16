@@ -46,7 +46,7 @@ textarea {
   &:disabled,
   &[disabled],
   &:has(input[disabled]) {
-    background-color: $clr-sand-100;
+    background-color: $clr-input-disabled-bg;
     cursor: not-allowed;
   }
 
