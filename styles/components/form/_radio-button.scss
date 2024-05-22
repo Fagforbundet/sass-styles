@@ -1,0 +1,47 @@
+@use '../../abstracts/' as *;
+
+input[type='radio'] + label {
+  font-weight: 400;
+}
+
+input[type='radio'] {
+  appearance: none;
+  background-color: $clr-white-100;
+  margin: 0;
+
+  width: 24px;
+  height: 24px;
+  border: 1px solid $clr-border-150;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  &:focus {
+    outline: solid 3px $clr-red-20;
+    outline-offset: 0;
+  }
+
+  &::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: $clr-text-100;
+    border: 0.5px solid white;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:disabled {
+    border-color: $clr-border-70;
+
+    &:checked::before {
+      background-color: $clr-text-30;
+    }
+  }
+}

@@ -81,7 +81,7 @@ textarea {
   }
 }
 
-input,
+input:not([type='radio']),
 select,
 textarea {
   @include input-field();
