@@ -1,13 +1,18 @@
 @use '../../abstracts/' as *;
+@use '../../base/typography';
+@use '../../utilities/outline';
 
 input[type='radio'] + label {
-  font-weight: 400;
+  @include typography.font-normal;
+  margin: 0;
 }
 
 input[type='radio'] {
   appearance: none;
   background-color: $clr-white-100;
   margin: 0;
+
+  cursor: pointer;
 
   width: 24px;
   height: 24px;
@@ -30,7 +35,7 @@ input[type='radio'] {
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     background-color: $clr-text-100;
-    border: 0.5px solid white;
+    border: 0.5px solid $clr-white-100;
   }
 
   &:checked::before {
@@ -39,6 +44,12 @@ input[type='radio'] {
 
   &:disabled {
     border-color: $clr-border-70;
+    cursor: not-allowed;
+
+    & + label {
+      color: $clr-text-30;
+      pointer-events: none;
+    }
 
     &:checked::before {
       background-color: $clr-text-30;
