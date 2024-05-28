@@ -1,21 +1,18 @@
+@use '../../base/typography';
 @use '../../abstracts' as *;
 
 label {
-  color: $clr-label;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 600;
-  letter-spacing: 0.1px;
-  margin: 0 0 0.3em;
-}
+  color: $clr-text-100;
+  @include typography.font-semibold;
 
-label:has(:not(input[type='checkbox'])) {
   display: flex;
   flex-direction: column;
   gap: 6px;
   margin: 0;
 
-  * {
-    font-weight: 400;
+  cursor: pointer;
+
+  &:has(input) > * {
+    @include typography.font-normal;
   }
 }

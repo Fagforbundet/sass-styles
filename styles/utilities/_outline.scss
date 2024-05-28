@@ -5,6 +5,11 @@
   outline-offset: 2px;
 }
 
+@mixin focused-red() {
+  outline: solid 3px $clr-red-20;
+  outline-offset: 0;
+}
+
 @mixin error() {
   outline: 1px solid $clr-red-100;
 }

@@ -2,9 +2,11 @@
 @use '../../base/typography';
 @use '../../utilities/outline';
 
-input[type='radio'] + label {
+label:has(input[type='radio']) {
   @include typography.font-normal;
-  margin: 0;
+  flex-direction: row;
+  place-items: flex-start;
+  gap: 8px;
 }
 
 input[type='radio'] {
@@ -16,6 +18,7 @@ input[type='radio'] {
 
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
   border: 1px solid $clr-border-150;
   border-radius: 50%;
 
@@ -23,8 +26,7 @@ input[type='radio'] {
   place-content: center;
 
   &:focus {
-    outline: solid 3px $clr-red-20;
-    outline-offset: 0;
+    @include outline.focused-red();
   }
 
   &::before {
@@ -46,9 +48,9 @@ input[type='radio'] {
     border-color: $clr-border-70;
     cursor: not-allowed;
 
-    & + label {
+    label:has(&) {
       color: $clr-text-30;
-      pointer-events: none;
+      cursor: default;
     }
 
     &:checked::before {
