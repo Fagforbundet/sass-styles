@@ -1,0 +1,25 @@
+<svg
+  width="30"
+  height="30"
+  viewBox="0 0 30 30"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xml:space="preserve"
+  xmlns:serif="http://www.serif.com/"
+  style="fill-rule: evenodd; clip-rule: evenodd"
+>
+  <g id="_.checkbox-icon-master" serif:id=".checkbox icon master">
+    <path
+      id="background"
+      d="M26.5,7C26.5,5.068 24.932,3.5 23,3.5L7,3.5C5.068,3.5 3.5,5.068 3.5,7L3.5,23C3.5,24.932 5.068,26.5 7,26.5L23,26.5C24.932,26.5 26.5,24.932 26.5,23L26.5,7Z"
+      style="fill: white; stroke: rgb(200, 198, 189); stroke-width: 1px"
+    />
+    <path
+      id="foreground--Stroke-"
+      serif:id="foreground (Stroke)"
+      d="M21.397,11.09L13.048,20.247L8.15,15.637L9.35,14.363L12.952,17.754L20.104,9.911L21.397,11.09Z"
+      style="fill: rgb(60, 60, 59)"
+    />
+  </g>
+</svg>
