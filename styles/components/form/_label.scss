@@ -12,6 +12,7 @@ label {
 
   cursor: pointer;
 
+  > *,
   &:has(input) > * {
     @include typography.font-normal;
   }
