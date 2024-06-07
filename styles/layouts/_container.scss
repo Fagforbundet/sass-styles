@@ -60,7 +60,9 @@
   @include grid;
 }
 
-@mixin grid($max-width: breakpoints.$ff-br-content-wide) {
+@mixin grid($size: wide) {
+  $content-width: min(100% - #{breakpoints.$ff-content-inline-margin} * 2, #{breakpoints.$ff-br-content-wide});
+  $max-width: map-get(breakpoints.$ff-content-widths, $size);
   $content-width: min(100% - #{breakpoints.$ff-content-inline-margin} * 2, $max-width);
 
   display: grid;
