@@ -1,8 +1,4 @@
-/*
-Deprecated. Use .ff-form from components/form/_form.scss instead.
-*/
-form,
-.form {
+.ff-form {
   align-items: flex-start;
   display: flex;
   flex-flow: column wrap;

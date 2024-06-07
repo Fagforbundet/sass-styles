@@ -1,4 +1,7 @@
 // Breakpoints
+/*
+Deprecated. Use css variables from abstracts/_breakpoints.scss instead
+*/
 $br-content-small: 611px;
 $br-content-medium: 768px;
 $br-content-wide: 956px;
@@ -11,6 +14,9 @@ $breakpoints: (
 );
 
 // Content width
+/*
+Deprecated. Use css variables from abstracts/_breakpoints.scss instead
+*/
 $content-inline-margin: 1rem;
 $content-width-wide: calc($br-content-wide - $content-inline-margin * 2);
 $content-width-medium: calc($br-content-medium - $content-inline-margin * 2);
@@ -23,6 +29,9 @@ $content-widths: (
 );
 
 // Borders
+/*
+Deprecated. Use css variables from abstracts/_borders.scss instead
+*/
 $border-radius-default: 4px;
 
 // Z-index

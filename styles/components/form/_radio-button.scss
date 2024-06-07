@@ -1,29 +1,19 @@
-@use '../../abstracts/' as *;
+@use '../../abstracts' as *;
 @use '../../base/typography';
 @use '../../utilities/outline';
 
-label:has(input[type='radio']) {
-  @include typography.font-normal;
-  flex-direction: row;
-  place-items: flex-start;
-  gap: 8px;
-}
-
-input[type='radio'] {
+.ff-radiobutton {
   appearance: none;
-  background-color: $clr-white-100;
-  margin: 0;
-
-  cursor: pointer;
-
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  border: 1px solid $clr-border-150;
+  background-color: var(--ff-white-100);
+  border: 1px solid var(--ff-border-clr-150);
   border-radius: 50%;
-
+  cursor: pointer;
   display: grid;
+  flex-shrink: 0;
+  height: 24px;
+  margin: 0;
   place-content: center;
+  width: 24px;
 
   &:focus {
     @include outline.focused-red();
@@ -31,13 +21,13 @@ input[type='radio'] {
 
   &::before {
     content: '';
-    width: 12px;
-    height: 12px;
+    background-color: var(--ff-text-clr-100);
+    border: 0.5px solid var(--ff-white-100);
     border-radius: 50%;
+    height: 12px;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    background-color: $clr-text-100;
-    border: 0.5px solid $clr-white-100;
+    width: 12px;
   }
 
   &:checked::before {
@@ -45,16 +35,81 @@ input[type='radio'] {
   }
 
   &:disabled {
-    border-color: $clr-border-70;
+    border-color: var(--ff-border-clr-70);
     cursor: not-allowed;
 
     label:has(&) {
-      color: $clr-text-30;
+      color: var(--ff-text-clr-30);
       cursor: default;
     }
 
     &:checked::before {
-      background-color: $clr-text-30;
+      background-color: var(--ff-text-clr-30);
+    }
+  }
+}
+
+label:has(.ff-radiobutton) {
+  @include typography.font-normal;
+  flex-direction: row;
+  gap: 8px;
+  place-items: flex-start;
+}
+
+
+/*
+Deprecated. Use .ff-radiobutton instead.
+*/
+label:has(input[type='radio']) {
+  @include typography.font-normal;
+  flex-direction: row;
+  gap: 8px;
+  place-items: flex-start;
+}
+
+input[type='radio'] {
+  appearance: none;
+  background-color: var(--ff-white-100);
+  border: 1px solid var(--ff-border-clr-150);
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  flex-shrink: 0;
+  height: 24px;
+  margin: 0;
+  place-content: center;
+  width: 24px;
+
+  &:focus {
+    @include outline.focused-red();
+  }
+
+  &::before {
+    content: '';
+    background-color: var(--ff-text-clr-100);
+    border: 0.5px solid var(--ff-white-100);
+    border-radius: 50%;
+    height: 12px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    width: 12px;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:disabled {
+    border-color: var(--ff-border-clr-70);
+    cursor: not-allowed;
+
+    label:has(&) {
+      color: var(--ff-text-clr-30);
+      cursor: default;
+    }
+
+    &:checked::before {
+      background-color: var(--ff-text-clr-30);
     }
   }
 }
