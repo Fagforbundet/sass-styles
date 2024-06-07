@@ -1,5 +1,8 @@
 // https://moderncss.dev/solutions-to-replace-the-12-column-grid/
 
+/*
+Deprecated. Use .ff-buttons from components/form/_button.scss instead.
+*/
 .buttons {
   display: grid;
   gap: 0.5rem;
@@ -8,6 +11,7 @@
 
   &--inline {
     @extend .buttons;
+
     align-items: center;
     display: flex;
     flex-flow: row wrap;

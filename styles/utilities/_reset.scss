@@ -9,9 +9,9 @@
   }
 
   body {
-    background-color: $clr-sand-50;
+    background-color: var(--ff-sand-50);
     font-family: 'Source Sans Pro', sans-serif;
-    color: $clr-text-100;
+    color: var(--ff-text-clr-100);
     @include typ.font-19;
     @include typ.font-normal;
     min-height: 100vh;
@@ -33,5 +33,16 @@
   textarea,
   select {
     font: inherit;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      list-style-type: none;
+      padding: 0;
+    }
   }
 }

@@ -1,0 +1,31 @@
+@mixin typeahead-items-result {
+  .items-result {
+    display: block;
+    padding: 0.75em 0.6em 0.75em 1em;
+
+    &:not([data-index='0']) {
+      // Cannot use :first-child since each result is nested inside an app-list-item
+      border-top: 1px solid var(--ff-border-clr-70);
+    }
+
+    &.active,
+    &:focus,
+    &:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    > .result-wrapper {
+      .code,
+      .description {
+        color: var(--ff-text-clr-100);
+        margin-left: auto;
+      }
+
+      .name {
+        font-weight: 600;
+        color: var(--ff-text-clr-70);
+        margin-bottom: 0.1em;
+      }
+    }
+  }
+}

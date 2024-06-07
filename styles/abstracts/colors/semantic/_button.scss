@@ -1,0 +1,16 @@
+:root {
+  --ff-btn-clr-disabled-bg: var(--ff-gray-100);
+  --ff-btn-clr-disabled-text: var(--ff-white-100);
+
+  --ff-btn-clr-primary-bg: var(--ff-red-100);
+  --ff-btn-clr-primary-text: var(--ff-white-100);
+  --ff-btn-clr-primary-bg-hover: var(--ff-red-120);
+  --ff-btn-clr-primary-text-hover: var(--ff-white-100);
+  --ff-btn-clr-primary-inner-shadow: var(--ff-logo-red-100);
+
+  --ff-btn-clr-secondary-bg: var(--ff-sand-65);
+  --ff-btn-clr-secondary-text: var(--ff-text-clr-100);
+  --ff-btn-clr-secondary-bg-hover: hsl(from var(--ff-sand-65) h s calc(l - 5)); // darken 5%
+  --ff-btn-clr-secondary-text-hover: var(--ff-text-clr-100);
+  --ff-btn-clr-secondary-inner-shadow: var(--ff-border-clr-120);
+}

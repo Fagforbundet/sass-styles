@@ -1,17 +1,20 @@
 @use '../abstracts' as *;
 @use '../utilities/outline';
 
+/*
+Deprecated. Use .ff-link instead
+*/
 a {
-  color: $clr-link;
+  color: var(--ff-link-clr);
   cursor: pointer;
   text-decoration: underline;
 
   &:visited {
-    color: $clr-link-hover;
+    color: var(--ff-link-clr-hover);
   }
 
   &:hover {
-    color: $clr-link-hover;
+    color: var(--ff-link-clr-hover);
     text-decoration: none;
   }
 
@@ -26,3 +29,30 @@ a {
     padding: 0.5rem;
   }
 }
+
+.ff-link {
+  color: var(--ff-link-clr);
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:visited {
+    color: var(--ff-link-clr-hover);
+  }
+
+  &:hover {
+    color: var(--ff-link-clr-hover);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:focus-visible {
+    @include outline.focused;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    // Increase trigger size for touch
+    display: inline-block;
+    padding: 0.5rem;
+  }
+}
+

@@ -1,5 +1,8 @@
 @use '../abstracts' as *;
 
+/*
+Deprecated. Use --ff-bg-default in abstracts/colors/semantic/_background.scss instead.
+*/
 .bg-sand-50 {
-  background-color: $clr-sand-50;
+  background-color: var(--ff-sand-50);
 }

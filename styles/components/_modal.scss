@@ -22,11 +22,11 @@
     min-width: 50px;
 
     .buttons__button {
-      border-radius: $border-radius-default;
+      border-radius: var(--ff-border-radius-default);
       overflow: hidden;
     }
 
-    @media (min-width: $br-content-medium) {
+    @media (min-width: var(--ff-br-content-medium)) {
       align-items: stretch;
       flex-flow: row wrap;
       justify-content: space-evenly;

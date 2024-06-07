@@ -1,9 +1,10 @@
 @use '../abstracts' as *;
+@use '../abstracts/breakpoints';
 
-@mixin container-narrow() {
+.container-narrow {
   display: block;
   margin: 0 auto 4rem;
-  max-width: $br-content-medium;
+  max-width: var(--ff-br-content-medium);
   width: 100%;
 
   @media (min-width: 992px) {
@@ -11,12 +12,39 @@
   }
 
   @media (min-width: 1200px) {
-    max-width: $br-content-wide;
+    max-width: var(--ff-br-content-wide);
+  }
+}
+
+.container-extra-narrow {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: var(--ff-br-content-medium);
+}
+
+.page-narrow {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: var(--ff-br-content-medium);
+}
+
+@mixin container-narrow() {
+  display: block;
+  margin: 0 auto 4rem;
+  max-width: var(--ff-br-content-medium);
+  width: 100%;
+
+  @media (min-width: 992px) {
+    max-width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: var(--ff-br-content-wide);
   }
 }
 
 @mixin container-extra-narrow() {
-  max-width: $br-content-small;
+  max-width: var(--ff-br-content-small);
 }
 
 /**
@@ -25,7 +53,7 @@
 @mixin page-narrow() {
   display: block;
   margin: 0 auto 4rem;
-  max-width: $br-content-medium;
+  max-width: var(--ff-br-content-medium);
 }
 
 @mixin narrow() {
@@ -33,9 +61,10 @@
 }
 
 @mixin grid($size: wide) {
+  $max-width: map-get(breakpoints.$ff-content-widths, $size);
+  $content-width: min(100% - #{breakpoints.$ff-content-inline-margin} * 2, $max-width);
+
   display: grid;
-  $max-width: map-get($content-widths, $size);
-  $content-width: min(100% - $content-inline-margin * 2, $max-width);
   grid-template-columns: 1fr [content-start] $content-width [content-end] 1fr;
   margin-bottom: 4rem;
 

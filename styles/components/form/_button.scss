@@ -1,16 +1,34 @@
 @use '../../abstracts' as *;
+@use '../../abstracts/colors';
 @use '../../base/typography' as typ;
 
-@mixin btn() {
+.ff-buttons {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  margin-block-start: 1rem;
+
+  &--inline {
+    @extend .ff-buttons;
+
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+}
+
+.ff-button {
   @include typ.font-semibold;
-  background-color: $clr-white-100;
-  border: 1.5px solid transparent;
-  border-radius: $border-radius-btn;
+
   align-items: center;
-  justify-content: center;
-  display: inline-flex;
+  background-color: var(--ff-white-100);
+  border: 1.5px solid transparent;
+  border-radius: var(--ff-btn-border-radius);
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  display: inline-flex;
   justify-content: center;
   outline: none;
   padding-block: 11px;
@@ -18,9 +36,203 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  transition:
-    background-color 0.15s ease-in-out,
-    color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,
+  color 0.15s ease-in-out;
+  user-select: none;
+
+  &--red,
+  &--primary {
+    background-color: var(--ff-btn-clr-primary-bg);
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: var(--ff-btn-clr-primary-text);
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: var(--ff-btn-clr-primary-text);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: var(--ff-btn-clr-primary-bg-hover);
+    }
+  }
+
+  &--gray,
+  &--secondary {
+    background: var(--ff-gray-100);
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.1);
+    color: var(--ff-white-100);
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: var(--ff-white-100);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: var(--ff-gray-120);
+    }
+
+    &:focus-visible {
+      box-shadow: 0px -2px 0px 0px #a29f9c inset;
+    }
+  }
+
+  &--sand {
+    background-color: var(--ff-btn-clr-secondary-bg);
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: var(--ff-btn-clr-secondary-text);
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: var(--ff-btn-clr-secondary-text);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: var(--ff-btn-clr-secondary-bg-hover);
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:disabled {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &--white {
+    background-color: var(--ff-white-100);
+    box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.1);
+    color: var(--ff-text-clr-100);
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: var(--ff-text-clr-100);
+      text-decoration: none;
+    }
+
+    &:hover {
+      // String interpolation because SASS doesn't seem to handle it otherwise
+      background: hsl(#{from var(--ff-sand-65)} #{h s} #{calc(l - 5)}); // darken 5%
+    }
+  }
+
+  /* Size */
+
+  &--stretch {
+    width: 100%;
+  }
+
+  &--mini {
+    @include typ.font-12;
+    line-height: 1rem;
+    padding: 6px 12px;
+  }
+
+  &--small {
+    @include typ.font-14;
+    padding: 7px 18px 8px 18px;
+  }
+
+  &--medium {
+    @include typ.font-16;
+    padding: 8px 18px;
+  }
+
+  &--large {
+    @include typ.font-19;
+  }
+
+  &--extra-large {
+    @include typ.font-24;
+    padding: 18.75px 22.5px 20px 22.5px;
+  }
+
+  /* State */
+
+  &:active {
+    &:not(:disabled) {
+      transform: translateY(1px);
+    }
+  }
+
+  &:focus-visible {
+    outline: var(--ff-text-clr-100) auto 1px;
+    outline-offset: 1px;
+  }
+
+  &:disabled:hover,
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--ff-btn-clr-disabled-bg);
+    box-shadow: none;
+    color: var(--ff-btn-clr-disabled-text);
+  }
+
+  /* button type */
+
+  &--link {
+    color: var(--ff-link-clr);
+    font-weight: normal;
+    background-color: transparent;
+    text-decoration: underline;
+    box-shadow: none;
+    text-align: left;
+    justify-content: left;
+    padding: 2px 0;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+      color: var(--ff-link-clr-hover);
+    }
+  }
+}
+
+
+/*
+Deprecated. Use .ff-button instead.
+*/
+
+@mixin btn() {
+  @include typ.font-semibold;
+  background-color: var(--ff-white-100);
+  border: 1.5px solid transparent;
+  border-radius: var(--ff-btn-border-radius);
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  outline: none;
+  padding-block: 11px;
+  padding-inline: 17px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease-in-out,
+  color 0.15s ease-in-out;
   user-select: none;
 
   @include primary;
@@ -69,22 +281,22 @@
   }
 
   &:focus-visible {
-    outline: $clr-text-100 auto 1px;
+    outline: var(--ff-text-clr-100) auto 1px;
     outline-offset: 1px;
   }
 
   &:disabled:hover,
   &:disabled {
     cursor: not-allowed;
-    background-color: $disabled-bg;
+    background-color: var(--ff-btn-clr-disabled-bg);
     box-shadow: none;
-    color: $disabled-text;
+    color: var(--ff-btn-clr-disabled-text);
   }
 
   /* button type */
 
   &--link {
-    color: $clr-link;
+    color: var(--ff-link-clr);
     font-weight: normal;
     background-color: transparent;
     text-decoration: underline;
@@ -96,7 +308,7 @@
     &:hover {
       background-color: transparent;
       text-decoration: none;
-      color: $clr-link-hover;
+      color: var(--ff-link-clr-hover);
     }
   }
 }

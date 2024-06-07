@@ -8,12 +8,11 @@ textarea {
 }
 
 @mixin input-field() {
-  background-color: $clr-white-100;
-  border: 1px solid $clr-border-100;
-  border-radius: $border-radius-default;
-  border-style: solid;
+  background-color: var(--ff-white-100);
+  border: 1px solid var(--ff-border-clr-100);
+  border-radius: var(--ff-border-radius-default);
   box-sizing: border-box;
-  color: $clr-text-100;
+  color: var(--ff-text-clr-100);
   display: block;
   line-height: 30px;
   padding: 10px;
@@ -29,7 +28,7 @@ textarea {
   }
 
   &::placeholder {
-    color: $clr-placeholder;
+    color: var(--ff-placeholder);
   }
 
   &:focus-visible,
@@ -39,14 +38,14 @@ textarea {
 
   &[readonly],
   &:has(input[readonly]) {
-    background-color: $clr-sand-70;
+    background-color: var(--ff-sand-70);
     cursor: default;
   }
 
   &:disabled,
   &[disabled],
   &:has(input[disabled]) {
-    background-color: $clr-input-disabled-bg;
+    background-color: var(--ff-input-disabled-bg);
     cursor: not-allowed;
   }
 
@@ -54,10 +53,10 @@ textarea {
 
   &.dropdown-input-field {
     &.panel-open {
-      outline: none;
       @include outline.focused-box-shadow;
-      border: 1px solid $clr-text-50;
-      border-radius: $border-radius-default $border-radius-default 0 0;
+      border: 1px solid var(--ff-text-clr-50);
+      border-radius: var(--ff-border-radius-default) var(--ff-border-radius-default) 0 0;
+      outline: none;
 
       &.transparent {
         border: none;
@@ -69,14 +68,14 @@ textarea {
 
   &.transparent {
     background-color: transparent;
-    padding: 0;
     border: none;
     border-radius: 0;
+    padding: 0;
 
     &:focus-visible,
     &:has(input:focus-visible) {
-      outline: none;
       box-shadow: none;
+      outline: none;
     }
   }
 }

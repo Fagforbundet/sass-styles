@@ -1,5 +1,8 @@
 @use '../abstracts' as *;
 
+/*
+Deprecated. Use --ff-border-radius-default from abstracts/_borders.scss instead.
+*/
 .rounded {
-  border-radius: $border-radius-default;
+  border-radius: var(--ff-border-radius-default);
 }

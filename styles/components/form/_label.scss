@@ -1,16 +1,36 @@
 @use '../../base/typography';
 @use '../../abstracts' as *;
 
-label {
-  color: $clr-text-100;
+.ff-label {
   @include typography.font-semibold;
+
+  color: var(--ff-text-clr-100);
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
   gap: 6px;
   margin: 0;
 
+  > *,
+  &:has(input) > * {
+    @include typography.font-normal;
+  }
+}
+
+/*
+Deprecated. Use .ff-label instead.
+*/
+label {
+  @include typography.font-semibold;
+
+  color: var(--ff-text-clr-100);
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
 
   > *,
   &:has(input) > * {

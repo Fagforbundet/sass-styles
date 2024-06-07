@@ -1,5 +1,8 @@
 @use '../abstracts' as *;
 
+/*
+Deprecated. Use --ff-border-default from abstracts/_borders.scss instead.
+*/
 .border-default {
-  border: 1px solid $clr-border-100;
+  border: 1px solid var(--ff-border-clr-100);
 }
