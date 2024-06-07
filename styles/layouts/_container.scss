@@ -1,4 +1,5 @@
 @use '../abstracts' as *;
+@use '../abstracts/breakpoints';
 
 .container-narrow {
   display: block;
@@ -59,8 +60,8 @@
   @include grid;
 }
 
-@mixin grid($max-width: var(--ff-content-width-wide)) {
-  $content-width: min(100% - var(--ff-content-inline-margin) * 2, $max-width);
+@mixin grid($max-width: breakpoints.$ff-br-content-wide) {
+  $content-width: min(100% - #{breakpoints.$ff-content-inline-margin} * 2, $max-width);
 
   display: grid;
   grid-template-columns: 1fr [content-start] $content-width [content-end] 1fr;

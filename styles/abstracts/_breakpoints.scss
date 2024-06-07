@@ -1,12 +1,19 @@
 :root {
   // Breakpoints
-  --ff-br-content-small: 611px;
-  --ff-br-content-medium: 768px;
-  --ff-br-content-wide: 956px;
+  --ff-br-content-small: $ff-br-content-small;
+  --ff-br-content-medium: $ff-br-content-medium;
+  --ff-br-content-wide: $ff-br-content-wide;
 
   // Content width
-  --ff-content-inline-margin: 1rem;
+  --ff-content-inline-margin: $ff-content-inline-margin;
   --ff-content-width-wide: calc(var(--ff-br-content-wide) - var(--ff-content-inline-margin) * 2);
   --ff-content-width-medium: calc(var(--ff-br-content-medium) - var(--ff-content-inline-margin) * 2);
   --ff-content-width-small: calc(var(--ff-br-content-small) - var(--ff-content-inline-margin) * 2);
 }
+
+
+$ff-br-content-small: 611px;
+$ff-br-content-medium: 768px;
+$ff-br-content-wide: 956px;
+
+$ff-content-inline-margin: 1rem;
