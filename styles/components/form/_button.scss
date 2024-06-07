@@ -133,7 +133,8 @@
     }
 
     &:hover {
-      background: var(--ff-white-100-darken-5);
+      // String interpolation because SASS doesn't seem to handle it otherwise
+      background: hsl(#{from var(--ff-sand-65)} #{h s} #{calc(l - 5)}); // darken 5%
     }
   }
 
