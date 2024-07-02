@@ -17,3 +17,21 @@
 @mixin focused-box-shadow() {
   box-shadow: 0 0 0 3px rgba(151, 154, 154, 0.18);
 }
+
+@mixin clip-top() {
+  clip-path: polygon(
+    -3px 0,
+    -3px calc(100% + 3px),
+    calc(100% + 3px) calc(100% + 3px),
+    calc(100% + 3px) 0
+  );
+}
+
+@mixin clip-bottom() {
+  clip-path: polygon(
+    -3px -3px,
+    -3px 100%,
+    calc(100% + 3px) 100%,
+    calc(100% + 3px) -3px
+  );
+}

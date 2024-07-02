@@ -29,6 +29,11 @@
     &.ng-touched.invalid {
     &:not(.transparent) {
       @include outline.error;
+
+      &:focus-visible,
+      &:has(input:focus-visible) {
+        @include outline.focused-red;
+      }
     }
   }
 }

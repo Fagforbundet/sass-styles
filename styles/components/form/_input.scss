@@ -9,7 +9,7 @@ textarea {
 
 @mixin input-field() {
   background-color: $clr-white-100;
-  border: 1px solid $clr-border-100;
+  border: 1px solid $clr-border-120;
   border-radius: $border-radius-default;
   border-style: solid;
   box-sizing: border-box;
@@ -28,13 +28,18 @@ textarea {
     cursor: pointer;
   }
 
+  &:hover {
+    border-color: $clr-gray-120;
+  }
+
   &::placeholder {
     color: $clr-placeholder;
   }
 
   &:focus-visible,
+  &:focus,
   &:has(input:focus-visible) {
-    @include outline.focused;
+    @include outline.focused-red;
   }
 
   &[readonly],
@@ -45,9 +50,15 @@ textarea {
 
   &:disabled,
   &[disabled],
+  &.disabled,
   &:has(input[disabled]) {
     background-color: $clr-input-disabled-bg;
+    border-color: $clr-border-100;
     cursor: not-allowed;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   @include control-error.outline;
